@@ -1,0 +1,47 @@
+html {
+    background-color: #f1f3f7;
+}
+
+#now_deli_loading {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    display: block;
+}
+
+@keyframes moveLine {
+    to {
+      width: 100%;
+    }
+  }
+  
+  @-webkit-keyframes moveLine {
+    to {
+      width: 100%;
+    }
+  }
+
+#now_deli_loading .progress_bar {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 0%;
+    margin-top: 5px;
+    background: linear-gradient(to bottom, #f1a165, #f36d0a);;
+    border: 3px solid #FBB03B;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    animation: moveLine 0.5s ease-out 1 forwards;
+    -webkit-animation: moveLine 0.5s ease-out 1 forwards;
+    -moz-animation: moveLine 0.5s ease-out 1 forwards;
+    -o-animation: moveLine 0.5s ease-out 1 forwards;
+}
+
+#now_deli_loading .loading_logo {
+    font-family: monospace;
+    font-size: 35px;
+    color: #FBB03B;
+    height: calc(200px * 0.175);
+    z-index: 1006;
+  }
