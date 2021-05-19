@@ -9,7 +9,7 @@ const ProductCarouselComponent = (props) => {
     const params = {
         observer: true,
         observeParents: true,
-        spaceBetween: 30,
+        spaceBetween: 20,
         loop: props.loop,
         centeredSlides: false,
         watchOverflow: true,
@@ -21,7 +21,7 @@ const ProductCarouselComponent = (props) => {
             },
             1024: {
                 slidesPerView: 4,
-                spaceBetween: 60
+                spaceBetween: 40
             }
         }
 

@@ -5,22 +5,14 @@ const BannerCategoryComponent = (props) => {
 
     const bannerDataList = [
         {
-            imageUrl: 'url(/popcorn/images/featured-1.jpg)',
+            imageUrl: 'url(/beef/images/featured-1.jpg)',
             className: 'featured-item featured-item-large',
-            content: 'New arrivals are now in!',
-            textButton: 'Show Collection',
         },
         {
-            imageUrl: 'url(/popcorn/images/featured-2.jpg)',
+            imageUrl: 'url(/beef/images/featured-2.jpg)',
             className: 'featured-item featured-item-small-first',
-            content: 'Basic t-shirts $29,99',
+            content: 'SPECIAL MEAT',
             textButton: 'More Details',
-        },
-        {
-            imageUrl: 'url(/popcorn/images/featured-3.jpg)',
-            className: 'featured-item featured-item-small',
-            content: 'Sale this summer',
-            textButton: 'VIEW ALL',
         }
     ]
 
@@ -28,10 +20,12 @@ const BannerCategoryComponent = (props) => {
         return (
             <React.Fragment key={index}>
                 <article style={{backgroundImage: banner.imageUrl}} className={banner.className}>
-                    <div className="featured-item__content">
-                        <h3>{banner.content}</h3>
-                        <Link to="#" className="btn btn--rounded">{banner.textButton}</Link>
-                    </div>
+                    {banner.content && 
+                        <div className="featured-item__content">
+                            <h3>{banner.content}</h3>
+                            <Link to="#" className="btn btn--rounded">{banner.textButton}</Link>
+                        </div>
+                    }
                 </article>
             </React.Fragment>
         )
@@ -39,7 +33,7 @@ const BannerCategoryComponent = (props) => {
 
     return (
         <section className="featured">
-            <div className="container">
+            <div className="container featured__meat">
                 {renderBanner}
             </div>
         </section>

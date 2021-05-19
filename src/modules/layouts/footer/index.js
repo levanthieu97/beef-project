@@ -8,9 +8,9 @@ const FooterComponent = () => {
             <div className="container">
                 <div className="site-footer__top">
                 <div className="site-footer__description">
-                    <h6><Logo /> <span>Popcorn</span>-Shop</h6>
-                    <p>House My Brand designs clothing for the young, the old & everyone in between – but most 
-                    importantly, for the fashionable</p>
+                    <h1 className="site-logo">NOW DELI</h1>
+                    {/* <p>House My Brand designs clothing for the young, the old & everyone in between – but most 
+                    importantly, for the fashionable</p> */}
                     <div className="site-footer__follow">Follow us on</div>
                     <ul className="site-footer__social-networks">
                         <li>
@@ -21,14 +21,14 @@ const FooterComponent = () => {
                 </div>
         
                 <div className="site-footer__links">
-                    <ul>
+                    {/* <ul>
                         <li>Shopping online</li>
                         <li><Link to="#">Order Status</Link></li>
                         <li><Link to="#">Shipping and Delivery</Link></li>
                         <li><Link to="#">Returns</Link></li>
                         <li><Link to="#">Payment options</Link></li>
                         <li><Link to="#">Contact Us</Link></li>
-                    </ul>
+                    </ul> */}
                     <ul>
                         <li>Information</li>
                         <li><Link to="#">Gift Cards</Link></li>
@@ -48,7 +48,7 @@ const FooterComponent = () => {
             
             <div className="site-footer__bottom">
                 <div className="container">
-                <p>POPCORN - Copyright © {new Date().getFullYear()}. Powered by Thieu Le</p>
+                <p>NOW DELI - Copyright © {new Date().getFullYear()}.</p>
                 </div>
             </div>
         </footer>

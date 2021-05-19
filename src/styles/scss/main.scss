@@ -4,6 +4,8 @@ html,body{overflow-x:hidden !important}
 @import './partials/variables.scss';
 @import './partials/breakpoints.scss';
 @import './partials/reset.scss';
+@import './components/components';
+
 
 // google fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
@@ -230,7 +232,7 @@ a {
 }
 
 .site-logo {
-  display: flex;
+  display: block;
   font-size: 14px;
   align-items: center;
   background: -webkit-linear-gradient(#86c440, #3eb54a);
@@ -778,45 +780,77 @@ a {
   @include breakpoint(phone) {
     padding: 0px 0 65px 0;
   }
+
   .container {
     @include breakpoint(phone) {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-    @include breakpoint(tablet-lg) {
-      display: grid;
-      grid-gap: 34px;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: "\31  \31  \31  \31  \31  \31  \32  \32  \32  \33  \33  \33 ";
+    &.featured__meat {
+      @include breakpoint(tablet-lg) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "\31  \31  \31  \31  \31  \31  \32  \32  \32  \32  \32  \32 ";
+      }
+    }
+    &.featured__benefit {
+      @include breakpoint(tablet-lg) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "\31  \31  \31  \31  \31  \32  \32  \32  \32  \32  \32  \32 ";
+      }
     }
   }
+  
   .featured-item-large {
     grid-area: \31 ; 
     width: 100%;
   }
   .featured-item-small-first { 
     grid-area: \32 ; 
-    @include breakpoint(phone) {
-      width: 49%;
-    }
-    @include breakpoint(tablet-lg) {
-      width: 100%;
-    }
+    justify-content: flex-end;
+    width: 100%;
   }
-  .featured-item-small { 
-    grid-area: \33 ; 
-    @include breakpoint(phone) {
-      width: 49%;
-    }
-    @include breakpoint(tablet-lg) {
-      width: 100%;
+  .featured__benefit {
+    .featured-item {
+      .benefit-title {
+        font-size: 2rem;
+        background: -webkit-linear-gradient(#86c440, #3eb54a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .benefit-info {
+        margin-top: 5px;
+        p {
+          margin: 5px 0;
+          color: #000;
+          font-size: 18px;
+          svg {
+            top: 3px;
+            position: relative;
+          }
+        }
+        span {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+        }
+      }
+      .btn--rounded {
+        position: relative;
+        margin-top: 20px;
+        left: 40%;
+        transform: translateX(-40%);
+      }
+      &:before{
+        background:rgba(247, 242, 242, 0.3); 
+      }
     }
   }
   .featured-item {
     height: 200px;
     display: flex;
-    margin-bottom: 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -838,22 +872,26 @@ a {
       z-index: 1;
       height: 100%;
       position: absolute;
-      background: rgba(0,0,0, 0.28);
     }
     .featured-item__content {
       margin-top: auto;
       position: relative;
       z-index: 2;
       h3 {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 20px;
-        color: #FFF;
         margin-bottom: 15px;
         line-height: 150%;
+        background: -webkit-linear-gradient(#86c440, #3eb54a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         @include breakpoint(phone) {
           font-size: 23px;
-          margin-bottom: 20px;
         }
+      }
+      .btn--rounded {
+        color: #fff;
+        background: linear-gradient(#86c440, #3eb54a);
       }
     }
   }
@@ -918,7 +956,7 @@ a {
     margin-bottom: 10px;
     position: relative;
     @include breakpoint(phone) {
-      height: 315px;
+      height: 335px;
       padding: 20px;
     }
 
@@ -1022,6 +1060,7 @@ a {
   }
 }
 
+@include productTypeBannerComponent;
 .section-products-featured {
   .section-products-featured__header {
     display: flex;

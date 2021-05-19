@@ -12,6 +12,8 @@ export {default as BannerCategoryComponent} from "./banner-category-component";
 export {default as TopSellComponent} from './top-sell-component';
 export {default as SubscribeComponent} from './subscribe-component';
 export {default as NewArrivalsComponent} from './new-arrivals-component';
+export {default as BenefitBannerComponent} from './benefit-banner-component';
+export {default as ProductTypeBannerComponent} from './products-type-banner-component';
 
 /*
 *   COLLECTIONS PAGE
