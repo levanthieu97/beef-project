@@ -48,7 +48,7 @@ const Header = (props) => {
                     <h1 className='site-logo'>NOW DELI</h1>
                 </Link>
                 <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
-                    <Link to='/collections'>Collections</Link>
+                    <Link to='#'>Collections</Link>
                     <Link to='#'>Sale</Link>
                     <Link to='/'>Home</Link>
                     <Link to='#'>About</Link>
