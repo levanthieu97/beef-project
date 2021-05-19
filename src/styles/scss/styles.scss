@@ -1,0 +1,15 @@
+// import font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+// import icons
+@import '../../../src/assets/css/fonts/icons/icons.scss';
+
+// import main
+@import './main.scss';
+
+// bootstrap
+// @import './vendor/bootstrap.scss';
+
+@import 'node_modules/swiper/swiper.scss';
+
+@import 'node_modules/swiper/components/effect-fade/effect-fade.scss'
