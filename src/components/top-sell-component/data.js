@@ -5,9 +5,8 @@ export const data = [
         currentPrice: '42',
         discount: '10',
         primaryImage: '/beef/images/products/beef-1.jpg',
-        hoverImage: '/beef/images/products/ao-trai-dat-2.png',
-        hoverImage: '',
-        name: 'Aged Pork Steak'
+        hoverImage: '/beef/images/products/beef-2.jpg',
+        name: 'Aged Pork Steak Aged Pork Aged Pork Aged Pork'
     },
     {
         id: 2,
@@ -15,7 +14,7 @@ export const data = [
         currentPrice: '80',
         discount: '20',
         primaryImage: '/beef/images/products/beef-3.jpg',
-        hoverImage: '/beef/images/products/ao-trai-dat-2.png',
+        hoverImage: '/beef/images/products/beef-4.jpg',
         name: 'Beef with mint'
     },
     {
@@ -24,7 +23,7 @@ export const data = [
         currentPrice: '63',
         discount: '10',
         primaryImage: '/beef/images/products/beef-5.jpg',
-        hoverImage: '/beef/images/products/vay-trai-tim-2.png',
+        hoverImage: '/beef/images/products/beef-6.jpg',
         name: 'Beef tongue'
     },
     {
@@ -33,43 +32,43 @@ export const data = [
         currentPrice: '32',
         discount: '10',
         primaryImage: '/beef/images/products/beef-7.jpg',
-        hoverImage: '/beef/images/products/do-bo-xanh-2.png',
+        hoverImage: '/beef/images/products/beef-8.jpg',
         name: 'Beef'
     },
     {
         id: 5,
-        price: '600.000',
-        currentPrice: '600.000',
+        price: '60',
+        currentPrice: '60',
         discount: '0',
-        primaryImage: '/beef/images/products/jumpsuits-thuc-vat.png',
-        hoverImage: '/beef/images/products/jumpsuits-thuc-vat-2.png',
-        name: 'Jumpsuits Plus Size Dây kéo'
+        primaryImage: '/beef/images/products/beef-9.jpg',
+        hoverImage: '/beef/images/products/beef-10.jpg',
+        name: 'Aging Beef'
     },
     {
         id: 6,
-        price: '380.000',
-        currentPrice: '380.000',
+        price: '380',
+        currentPrice: '380',
         discount: '0',
-        primaryImage: '/beef/images/products/knit-len.png',
-        hoverImage: '/beef/images/products/knit-len-2.png',
-        name: 'Knit len màu trơn'
+        primaryImage: '/beef/images/products/beef-11.jpg',
+        hoverImage: '/beef/images/products/beef-12.jpg',
+        name: 'Belted Galloway'
     },
     {
         id: 7,
         price: '100.000',
         currentPrice: '100.000',
         discount: '0',
-        primaryImage: '/beef/images/products/knit-hoat-hinh.png',
-        hoverImage: '/beef/images/products/knit-hoat-hinh-2.png',
-        name: 'Knit ngọn Hoạt hình'
+        primaryImage: '/beef/images/products/beef-13.jpg',
+        hoverImage: '/beef/images/products/beef-14.jpg',
+        name: 'Belted Galloway Sirloin Steak'
     },
     {
         id: 8,
-        price: '200.000',
-        currentPrice: '180.000',
+        price: '20',
+        currentPrice: '18',
         discount: '10',
-        primaryImage: '/beef/images/products/knit-phoi-mau.png',
-        hoverImage: '/beef/images/products/knit-phoi-mau-2.png',
-        name: 'Knit phối màu'
+        primaryImage: '/beef/images/products/beef-15.jpg',
+        hoverImage: '/beef/images/products/beef-16.jpg',
+        name: 'Fore Rib Boned and Rolled'
     },
 ]

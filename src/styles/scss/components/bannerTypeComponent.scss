@@ -1,0 +1,125 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin bannerTypeComponent {
+  .featured {
+    padding: 0px 0 30px 0;
+    @include breakpoint(phone) {
+      padding: 0px 0 65px 0;
+    }
+
+    .container {
+      @include breakpoint(phone) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      &.featured__meat {
+        @include breakpoint(tablet-lg) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+          grid-template-areas: "\31  \31  \31  \31  \31  \31  \32  \32  \32  \32  \32  \32 ";
+        }
+      }
+      &.featured__benefit {
+        @include breakpoint(tablet-lg) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+          grid-template-areas: "\31  \31  \31  \31  \31  \32  \32  \32  \32  \32  \32  \32 ";
+        }
+      }
+    }
+
+    .featured-item-large {
+      grid-area: \31;
+      width: 100%;
+    }
+    .featured-item-small-first {
+      grid-area: \32;
+      justify-content: flex-end;
+      width: 100%;
+    }
+    .featured__benefit {
+      .featured-item {
+        .benefit-title {
+          font-size: 2rem;
+          background: -webkit-linear-gradient(#86c440, #3eb54a);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .benefit-info {
+          margin-top: 5px;
+          p {
+            margin: 5px 0;
+            color: #000;
+            font-size: 18px;
+            svg {
+              top: 3px;
+              position: relative;
+            }
+          }
+          span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+          }
+        }
+        .btn--rounded {
+          position: relative;
+          margin-top: 20px;
+          left: 40%;
+          transform: translateX(-40%);
+        }
+        &:before {
+          background: rgba(247, 242, 242, 0.3);
+        }
+      }
+    }
+    .featured-item {
+      height: 200px;
+      display: flex;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 21px 22px;
+      position: relative;
+      @include breakpoint(phone) {
+        height: 375px;
+        padding: 55px 46px;
+        margin-bottom: 10px;
+      }
+      @include breakpoint(tablet-lg) {
+        margin-bottom: 0;
+      }
+      &:before {
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        position: absolute;
+      }
+      .featured-item__content {
+        margin-top: auto;
+        position: relative;
+        z-index: 2;
+        h3 {
+          font-weight: 500;
+          font-size: 20px;
+          margin-bottom: 15px;
+          line-height: 150%;
+          background: -webkit-linear-gradient(#86c440, #3eb54a);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          @include breakpoint(phone) {
+            font-size: 23px;
+          }
+        }
+        .btn--rounded {
+          color: #fff;
+          background: linear-gradient(#86c440, #3eb54a);
+        }
+      }
+    }
+  }
+}

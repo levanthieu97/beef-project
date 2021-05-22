@@ -4,14 +4,7 @@ import {HotNewsComponent, Breadcrumb, GalleryComponent} from '../../../component
 const ProductsComponent = (props) => {
     const [showBlock, setShowBlock] = useState(true);
     const listImageProducts =[
-        "/popcorn/images/products/knit-hoat-hinh.png",
-        "/popcorn/images/products/knit-hoat-hinh-2.png",
-        "/popcorn/images/products/knit-len.png",
-        "/popcorn/images/products/knit-len-2.png",
-        "/popcorn/images/products/knit-hoat-hinh.png",
-        "/popcorn/images/products/knit-hoat-hinh-2.png",
-        "/popcorn/images/products/knit-len.png",
-        "/popcorn/images/products/knit-len-2.png"
+        
     ]
     return (
         <React.Fragment>
