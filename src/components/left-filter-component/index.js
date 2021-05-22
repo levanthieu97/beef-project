@@ -10,7 +10,7 @@ import {setFilterOpen} from '../../store/actions/GlobalAction';
 const LeftFilterComponent = (props) => {
 
     const {register} = useForm();
-    const {filterOpen} = useSelector(state => state.popcornSlice);
+    const {filterOpen} = useSelector(state => state.globalSlice);
     const dispatch = useDispatch();
     const getFilterProducts = () => {};
 

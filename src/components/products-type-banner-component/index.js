@@ -121,7 +121,7 @@ const ProductTypeBannerComponent = (props) => {
                                             <span>{nutrition.rightInfo}</span>
                                         </div>
                                         <div className="info-value">
-                                            <span className="">{nutrition.rightValueL}</span>
+                                            <span className="">{nutrition.rightValue}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@ const ProductTypeBannerComponent = (props) => {
                         </div>
                     </div>
                     <div className="footer-button">
-                        <button type="button" className="btn">ADD TO CART</button>
+                        <button type="button" className="btn btn-cart">ADD TO CART</button>
                     </div>
                 </div>
             </div>

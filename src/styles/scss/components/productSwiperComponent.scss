@@ -1,0 +1,44 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin productSwiperComponent {
+  .section {
+    margin-bottom: 30px;
+    @include breakpoint(phone) {
+      margin-bottom: 65px;
+    }
+    .section__intro {
+      margin-bottom: 36px;
+      @include breakpoint(phone) {
+        margin-bottom: 45px;
+      }
+      h4 {
+        font-size: 23px;
+        font-weight: 300;
+        text-align: center;
+        @include breakpoint(phone) {
+          font-size: 29px;
+        }
+      }
+    }
+    .products-carousel {
+      .swiper-container {
+        .slider-load-more {
+          height: initial;
+          .more {
+            position: absolute;
+            top: 40%;
+            left: 5%;
+            @include breakpoint(phone) {
+              left: 20%;
+            }
+          }
+          .more:focus,
+          .more:hover {
+            border-color: var(--color-orange);
+            color: var(--color-orange);
+          }
+        }
+      }
+    }
+  }
+}
