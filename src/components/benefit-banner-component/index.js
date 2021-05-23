@@ -5,7 +5,7 @@ import { BsCheck } from "react-icons/bs";
 const BenefitBannerComponent = (props) => {
   return (
     <section className="featured">
-      <div className="container featured__benefit">
+      <div className="component-container featured__benefit">
         <article className="featured-item featured-item-large">
           <div className="featured-item__content">
             <h1 className="benefit-title">HEALTH & BENEFIT</h1>

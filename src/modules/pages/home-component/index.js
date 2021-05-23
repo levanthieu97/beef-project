@@ -1,13 +1,14 @@
 import React from 'react';
-import {SliderTopComponent, BannerCategoryComponent, TopSellComponent, BenefitBannerComponent, ProductTypeBannerComponent, NewArrivalsComponent} from '../../../components';
+import {SliderTopComponent, BannerCategoryComponent, TopSellComponent, BenefitBannerComponent, ProductTypeBannerComponent, NewArrivalsComponent, BlogNewsComponent} from '../../../components';
 
 const components = [
     SliderTopComponent,
     NewArrivalsComponent,
-    BannerCategoryComponent,
+    ProductTypeBannerComponent,
     TopSellComponent,
-    BenefitBannerComponent,
-    ProductTypeBannerComponent
+    // BenefitBannerComponent,
+    BannerCategoryComponent,
+    BlogNewsComponent
 ]
 
 const HomeComponent = (props) => {  

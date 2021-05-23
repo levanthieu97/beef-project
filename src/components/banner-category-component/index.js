@@ -33,7 +33,7 @@ const BannerCategoryComponent = (props) => {
 
     return (
         <section className="featured">
-            <div className="container featured__meat">
+            <div className="component-container featured__meat">
                 {renderBanner}
             </div>
         </section>

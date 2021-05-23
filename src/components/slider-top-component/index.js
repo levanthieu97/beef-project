@@ -33,11 +33,11 @@ const SliderTopComponent = (props) => {
             <Swiper {...params}>
                 <div>
                     <div className="page-intro__slide" style={{backgroundImage: "url('/beef/images/slide-1.jpg')"}}>
-                        <div className="container">
+                        <div className="component-container">
                             <div className="page-intro__slide__content">
                                 <h2>Sale of the summer collection</h2>
                                 <Link to="#" className="btn-shop">
-                                    <i className="icon-right"></i>Shop now
+                                    Shop now<i className="icon-right"></i>
                                 </Link>
                             </div>
                         </div>
@@ -45,11 +45,11 @@ const SliderTopComponent = (props) => {
                 </div>
                 <div>
                     <div className="page-intro__slide" style={{backgroundImage: "url('/beef/images/slide-2.jpg')"}}>
-                        <div className="container">
+                        <div className="component-container">
                             <div className="page-intro__slide__content">
                                 <h2>Make your house into a home</h2>
                                 <Link to="#" className="btn-shop">
-                                    <i className="icon-right"></i>Shop now
+                                    Shop now <i className="icon-right"></i>
                                 </Link>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ const SliderTopComponent = (props) => {
                 </div>
             </Swiper>
             <div className="shop-data">
-                <div className="container">
+                <div className="component-container">
                     <ul className="shop-data__items">
                         <li>
                             <i className="icon-shipping"></i>

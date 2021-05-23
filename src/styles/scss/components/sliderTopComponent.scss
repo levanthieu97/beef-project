@@ -3,10 +3,6 @@
 @mixin sliderTopComponent {
   .page-intro {
     position: relative;
-    margin-bottom: 20px;
-    @include breakpoint(phone) {
-      margin-bottom: 30px;
-    }
     .swiper-button-prev,
     .swiper-button-next {
       bottom: 20px;
@@ -69,7 +65,7 @@
       z-index: 99;
       display: none;
       position: absolute;
-      padding: 36px 30px 30px 30px;
+      padding: 30px;
       @include breakpoint(phone) {
         display: block;
       }
@@ -104,14 +100,14 @@
           }
           i {
             margin-right: 27px;
-            height: 39px;
-            width: 39px;
-            font-size: 14px;
+            height: 45px;
+            width: 45px;
+            font-size: 20px;
             flex-shrink: 0;
             display: flex;
             border-radius: 10px;
-            color: var(--color-orange);
-            background: var(--color-orange-light);
+            color: #FFF;
+            background: linear-gradient(#86c440, #3eb54a);
             justify-content: center;
             align-items: center;
             @include breakpoint(phone) {
@@ -124,7 +120,7 @@
           .data-item__content {
             h4 {
               font-size: 14px;
-              margin-bottom: 7px;
+              margin: 7px 0px;
             }
             p {
               font-size: 12px;
@@ -153,7 +149,7 @@
         position: absolute;
         background-color: rgba(0, 0, 0, 0.2);
       }
-      .container {
+      .component-container {
         z-index: 10;
         display: flex;
         position: relative;
@@ -179,20 +175,58 @@
           }
         }
         .btn-shop {
-          display: flex;
+          position: relative;
+          font-size: 15px;
+          line-height: 26px;
+          font-weight: 700;
           color: #fff;
-          align-items: center;
+          text-align: center;
+          cursor: pointer;
+          border-radius: 5px;
+          padding: 12px 25px;
+          z-index: 1;
+          transition: all 500ms ease;
+          background: linear-gradient(#86c440, #3eb54a);
+          display: inline-flex;
+          // color: #fff;
+          // align-items: center;
           i {
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            width: 40px;
-            height: 40px;
             color: #fff;
             font-size: 15px;
-            margin-right: 10px;
-            background-color: var(--color-orange);
-            border-radius: 100%;
+            margin-left: 20px;
+          }
+          &:hover {
+            text-decoration: none;
+            outline: none;
+            &:before {
+              -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+              -webkit-transition-timing-function: cubic-bezier(.52,1.64,.37,.66);
+              transition-timing-function: cubic-bezier(.52,1.64,.37,.66);
+            }
+          }
+          &:before {
+            position: absolute;
+            content: '';
+            background: #1c1d1f;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
           }
         }
       }
