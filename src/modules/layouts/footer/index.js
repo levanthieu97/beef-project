@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const FooterComponent = () => {
     return (
         <footer className="site-footer">
-            <div className="container">
+            <div className="component-container">
                 <div className="site-footer__top">
                 <div className="site-footer__description">
                     <h1 className="site-logo">NOW DELI</h1>
@@ -47,7 +47,7 @@ const FooterComponent = () => {
             </div>
             
             <div className="site-footer__bottom">
-                <div className="container">
+                <div className="component-container">
                 <p>NOW DELI - Copyright © {new Date().getFullYear()}.</p>
                 </div>
             </div>

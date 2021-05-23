@@ -121,7 +121,7 @@
       @include breakpoint(phone) {
         padding: 33px 0;
       }
-      .container {
+      .component-container {
         font-size: 11px;
         text-align: center;
         @include breakpoint(phone) {

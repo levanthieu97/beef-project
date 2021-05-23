@@ -81,7 +81,7 @@
         }
         &:hover {
           color: #fff;
-          background-color: var(--color-orange);
+          background: linear-gradient(#86c440, #3eb54a);
         }
       }
       img {
@@ -140,8 +140,8 @@
             flex-shrink: 0;
             display: flex;
             border-radius: 5px;
-            color: var(--color-orange);
-            background: var(--color-orange-light);
+            color: #FFF;
+            background: linear-gradient(#86c440, #3eb54a);
             justify-content: center;
             align-items: center;
             @include breakpoint(desktop-lg) {

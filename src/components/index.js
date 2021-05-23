@@ -14,6 +14,7 @@ export {default as SubscribeComponent} from './subscribe-component';
 export {default as NewArrivalsComponent} from './new-arrivals-component';
 export {default as BenefitBannerComponent} from './benefit-banner-component';
 export {default as ProductTypeBannerComponent} from './products-type-banner-component';
+export {default as BlogNewsComponent} from './blog-news-component';
 
 /*
 *   COLLECTIONS PAGE

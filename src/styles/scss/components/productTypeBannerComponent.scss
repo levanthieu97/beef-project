@@ -38,12 +38,9 @@
     }
 
     .products-type__container {
-      max-width: 1280px;
       height: 540px;
       box-sizing: border-box;
       padding-top: 35px;
-      margin-left: auto;
-      margin-right: auto;
       .type-title {
         display: block;
         text-align: center;
@@ -62,12 +59,11 @@
         align-items: center;
         overflow: hidden;
         position: relative;
-        left: 20px;
         .banner-wrap {
           max-width: 370px;
           height: 320px;
           display: inline-block;
-          margin: 0 15px;
+          margin: 0 15px 0 5px;
           .banner-item {
             width: 380px;
             height: 320px;

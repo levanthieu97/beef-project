@@ -139,7 +139,7 @@ const ProductTypeBannerComponent = (props) => {
     return (
         <section className="products-type__component"> 
             <div className="icon-layer"></div>
-            <div className="products-type__container">
+            <div className="products-type__container component-container">
                 <div className="type-title">
                     <h2>Services For You</h2>
                 </div>

@@ -17,7 +17,7 @@ const CollectionsComponent = (props) => {
             <HotNewsComponent />
             <Breadcrumb />
             <section className="products-page">
-                <div className="container">
+                <div className="component-container">
                     {renderComponent}
                 </div>
             </section>

@@ -1,0 +1,117 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin blogNewsComponent {
+    .blog-news {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        @include breakpoint(phone) {
+        margin-bottom: 65px;
+        margin-top: 35px;
+        }
+        .blog-news__container {
+            position: static;
+            .blog-title {
+                position: relative;
+                display: block;
+                margin-bottom: 30px;
+                span {
+                    position: relative;
+                    display: block;
+                    font-size: 16px;
+                    line-height: 26px;
+                    font-weight: 800;
+                    margin-bottom: 7px;
+                    background: -webkit-linear-gradient(#86c440, #3eb54a);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                h2 {
+                    font-size: 35px;
+                    margin: 10px 0px;
+                    position: relative;
+                    color: #353535;
+                    font-weight: 800;
+                }
+            }
+            .news-list {
+                .news-block-one {
+                    position: relative;
+                    display: block;
+                    padding: 30px 30px;
+                    border: 2px solid #f0f0f0;
+                    .inner-box {
+                        position: relative;
+                        box-sizing: border-box;
+                        .image-box {
+                            position: relative;
+                            display: block;
+                            overflow: hidden;
+                            height: 222px;
+                            .news-img {
+                                height: auto;
+                                max-width: 100%;
+                                border: none;
+                                -webkit-border-radius: 0;
+                                border-radius: 0;
+                                -webkit-box-shadow: none;
+                                box-shadow: none;
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                        }
+                        .lower-content {
+                            .post-info {
+                                display: inline-block;
+                                font-size: 14px;
+                                line-height: 24px;
+                                color: #8e9c9f;
+                                margin-bottom: 10px;
+                            }
+                            h4 {
+                                display: block;
+                                font-size: 20px;
+                                line-height: 26px;
+                                font-weight: 500;
+                                color: #222;
+                                margin-bottom: 12px;
+                                a {
+                                    display: inline-block;
+                                    &:hover {
+                                        color: #3eb54a;
+                                    }
+                                }
+                            }
+                            p {
+                                font-size: 16px;
+                                line-height: 25px;
+                                color: #565872;
+                            }
+                            .more-info {
+                                a {
+                                    display: inline-block;
+                                    font-size: 13px;
+                                    line-height: 24px;
+                                    font-weight: 700;
+                                    letter-spacing: 1px;
+                                    background: -webkit-linear-gradient(#86c440, #3eb54a);
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    i {
+                                        margin-left: 5px;
+                                        transition: margin-left 1s ease;
+                                    }
+                                    &:hover {
+                                        i {
+                                            margin-left: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

@@ -6,7 +6,7 @@ const Breadcrumb = (props) => {
 
     return (
         <section className="breadcrumb-section">
-            <div className="container">
+            <div className="component-container">
                 <ul className="breadcrumb-list">
                     <li><Link to="/#"><i className="icon-home"></i></Link></li>
                     <li>All Products</li>

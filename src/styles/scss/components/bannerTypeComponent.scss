@@ -2,12 +2,9 @@
 
 @mixin bannerTypeComponent {
   .featured {
-    padding: 0px 0 30px 0;
-    @include breakpoint(phone) {
-      padding: 0px 0 65px 0;
-    }
+    padding: 0px 0 10px 0;
 
-    .container {
+    .component-container {
       @include breakpoint(phone) {
         display: flex;
         flex-wrap: wrap;

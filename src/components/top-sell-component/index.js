@@ -6,7 +6,7 @@ const TopSellComponent = (props) => {
 
     return (
         <section className="section">
-            <div className="container">
+            <div className="component-container">
                 <header className="section__intro">
                     <h4>Top Sell Products</h4>
                 </header>

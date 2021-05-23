@@ -42,7 +42,7 @@ const Header = (props) => {
 
     return (
         <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`} >
-            <div className="container">
+            <div className="component-container">
                 <Link to='/'>
                     {/* <span className='site-logo'><Logo/></span>  */}
                     <h1 className='site-logo'>NOW DELI</h1>

@@ -12,7 +12,7 @@ const ProductsComponent = (props) => {
             <Breadcrumb />
 
             <section className="product-single">
-                <div className="container">
+                <div className="component-container">
                     <div className="product-single__content">
                         <GalleryComponent images={listImageProducts}/>
                     </div>

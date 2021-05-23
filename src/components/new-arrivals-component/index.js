@@ -6,7 +6,7 @@ const NewArrivalsComponent = (props) => {
 
     return (
         <section className="section">
-            <div className="container">
+            <div className="component-container">
                 <header className="section__intro">
                     <h4>BEEF</h4>
                 </header>
