@@ -79,13 +79,10 @@
       background-size: cover;
       padding: 21px 22px;
       position: relative;
+      margin-bottom: 0;
       @include breakpoint(phone) {
         height: 375px;
         padding: 55px 46px;
-        margin-bottom: 10px;
-      }
-      @include breakpoint(tablet-lg) {
-        margin-bottom: 0;
       }
       &:before {
         content: "";
