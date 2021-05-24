@@ -19,7 +19,7 @@ const BlogNewsComponent = (props) => {
             content: 'The handling plant is the halfway point in the ranch to-fork natural pecking order.It is essential to deal with the birds that are gotten to guarantee their welfare and to streamline the saleable item',
         },
         {
-            image: '/beef/images/products/beef-11.jpg',
+            image: '/beef/images/slide-2.jpg',
             author: 'admin',
             createdDate: 'Jun 14 2020',
             newsTitle: 'Processors to move from whole bird to chicken parts',

@@ -93,6 +93,7 @@
         object-position: top center;
         object-fit: cover;
         position: absolute;
+        border-radius: 5px;
         &.image-hover {
           opacity: 0;
           transition: opacity 0.2s;
@@ -132,7 +133,7 @@
         .btn-add-item {
           position: absolute;
           right: 0;
-          bottom: 0;
+          bottom: 8px;
           .icon-cart {
             height: 27px;
             width: 27px;

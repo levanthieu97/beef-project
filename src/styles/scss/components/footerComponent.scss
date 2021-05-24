@@ -4,9 +4,6 @@
   .site-footer {
     padding-top: 50px;
     background-color: var(--color-orange-light);
-    @include breakpoint(phone) {
-      padding-top: 50px;
-    }
     .site-footer__top {
       @include breakpoint(phone) {
         display: flex;
