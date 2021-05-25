@@ -2,127 +2,190 @@
 
 @mixin footerComponent {
   .site-footer {
-    padding-top: 50px;
-    background-color: var(--color-orange-light);
+    position: relative;
+    background-color: #1c1d1f;
     .site-footer__top {
-      @include breakpoint(phone) {
-        display: flex;
-        flex-wrap: wrap;
-        padding-bottom: 60px;
-      }
-      @include breakpoint(tablet-lg) {
-        flex-wrap: nowrap;
-      }
-    }
-    .site-footer__follow {
-      display: flex;
-      color: #000;
-      font-weight: 300;
-      align-items: center;
-      margin-top: 20px;
-      font-weight: 600;
-    }
-    .site-footer__description {
-      margin-right: auto;
-      margin-bottom: 40px;
-      @include breakpoint(phone) {
-        width: 400px;
-        margin-bottom: 50px;
-      }
-      @include breakpoint(tablet-lg) {
-        margin-bottom: 0;
-      }
-      svg {
-        object-fit: contain;
-        width: 45px;
-        height: 35px;
-        fill: #000;
-        margin-right: 15px;
-      }
-      h6 {
-        display: flex;
-        color: #000;
-        font-weight: 300;
+      position: relative;
+      padding: 70px 0 50px 0;
+      border-bottom: 2px solid rgba(255,255,255,.1);
+      margin-top: 30px;
+      .site-logo {
+        display: block;
+        font-size: 28px;
         align-items: center;
-        margin-bottom: 20px;
-        span {
-          font-weight: 400;
-          color: var(--color-orange);
-        }
+        background: -webkit-linear-gradient(#86c440, #3eb54a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-      p {
-        font-size: 13px;
-        line-height: 190%;
-      }
-    }
-    .site-footer__social-networks {
-      display: flex;
-      margin-top: 10px;
-      li {
-        font-size: 21px;
-        margin-right: 25px;
-        span {
-          font-size: 15px;
-        }
-      }
-      .icon-facebook::before {
-        margin: 0px;
-      }
-    }
-    .site-footer__links {
-      @include breakpoint(phone) {
-        display: flex;
-        width: 100%;
-      }
-      @include breakpoint(tablet-lg) {
-        width: auto;
-      }
-      ul {
-        margin-bottom: 40px;
-        @include breakpoint(phone) {
-          margin-right: 50px;
-          margin-bottom: 0;
-        }
-        @include breakpoint(tablet-lg) {
-          margin-right: 99px;
-        }
-        &:last-of-type {
-          margin-right: 0;
-        }
-        li {
+      .logo-widget {
+        p {
           font-size: 14px;
-          color: #000;
-          margin-bottom: 12px;
-          @include breakpoint(phone) {
-            margin-bottom: 15px;
-          }
-          &:first-child {
-            font-weight: 600;
-            margin-bottom: 26px;
-            @include breakpoint(phone) {
-              margin-bottom: 34px;
+          line-height: 30px;
+          color: #fff;
+          margin: 0
+        }
+      }
+      @include breakpointMax(phone) {
+        .footer-widget {
+          margin: 0 0 30px 0 !important;
+        }
+      }
+      .contact-widget {
+        position: relative;
+        display: block;
+        padding: 48px 30px 30px 35px;
+        border-radius: 5px;
+        margin-top: 0;
+        background: linear-gradient(#86c440, #3eb54a, #008F68);
+        @include breakpoint(tablet-lg) {
+          margin-top: -103px;
+        }
+        .info {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          position: relative;
+          margin-bottom: 30px;
+          border-bottom: 2px solid rgba(255,255,255,.2);
+          li {
+            // color: #FFF;
+            position: relative;
+            display: block;
+            padding-left: 73px;
+            margin-bottom: 25px;
+            .contact-icon {
+              color: #fff;
+              position: absolute;
+              left: 0;
+              top: 5px;
+              font-size: 40px;
+              line-height: 40px;
+            }
+            p {
+              font-size: 16px;
+              line-height: 24px;
+              color: #fff;
+              margin: 0;
+            }
+            h5 {
+              font-size: 18px;
+              display: block;
+              color: #fff;
             }
           }
-          a {
-            &:hover {
-              text-decoration: underline;
+          &:after {
+            display: block;
+            clear: both;
+            content: "";
+          }
+        }
+        .social-links {
+          display: table;
+          margin-left: auto;
+          margin-right: auto;
+          .title {
+            text-align: center;
+            margin-bottom: 5px;
+            span {
+              font-size: 16px;
+              line-height: 24px;
+              color: #fff;
+              margin: 0;
+              font-weight: 500;
+              margin-right: 10px;
+            }
+          }
+          li {
+            display: inline-block;
+            float: left;
+            margin-right: 20px;
+            a {
+              position: relative;
+              display: inline-block;
+              font-size: 20px;
+              color: #fff;
+              width: 45px;
+              height: 45px;
+              line-height: 48px;
+              text-align: center;
+              border-radius: 50%;
+              border: 1px solid rgba(255,255,255,.2);
+              transition: background-color 1s ease ;
+              &:hover {
+                border-color: #fff;
+                background-color: #fff;
+                color: #3eb54a;
+              }
+            }
+            
+          }
+          &:after {
+            display: block;
+            clear: both;
+            content: "";
+          }
+        }
+      }
+      .subscribe__content {
+        h4 {
+          font-size: 18px;
+          color: #fff;
+          margin-bottom: 15px;
+        }
+        .subscribe__form {
+          position: relative;
+          margin-right: 50px;
+          input {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            padding: 0 110px 0 10px;
+            color: #ABABAB;
+            font-size: 12px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,.15);
+            @include breakpoint(phone) {
+              height: 48px;
+              padding: 0 120px 0 20px;
+              font-size: 13;
+            }
+            transition: border 1s ease;
+            &:focus {
+              border-color: #3eb54a;
+            }
+          }
+          .btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 11px;
+            padding-top: 10px;
+            padding-bottom: 11px;
+            background: linear-gradient(#86c440, #3eb54a);
+            color: #fff;
+            transition: background-color 1s ease;
+            @include breakpoint(phone) {
+              padding: 13px 20px;
+              font-size: 13px;
+              margin-top: 0;
             }
           }
         }
       }
     }
     .site-footer__bottom {
-      padding: 20px 0;
-      background-color: #fff;
-      border-top: 1px solid #ebebeb;
+      padding: 20px;
       @include breakpoint(phone) {
-        padding: 33px 0;
+        padding: 33px 0 20px 0;
       }
       .component-container {
         font-size: 11px;
         text-align: center;
         @include breakpoint(phone) {
           font-size: 16px;
+        }
+        p{
+          color: #bbbbbc;
         }
       }
     }
