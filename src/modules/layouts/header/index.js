@@ -27,6 +27,9 @@ const Header = (props) => {
         isOnTopHeader();
         console.log(onTop);
         window.onscroll = () => { isOnTopHeader(); };
+        return () => {
+            isOnTopHeader();
+        }
     },[]);
 
     const closeMenu = () => {
@@ -48,7 +51,7 @@ const Header = (props) => {
                     <h1 className='site-logo'>NOW DELI</h1>
                 </Link>
                 <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
-                    <Link to='#'>Collections</Link>
+                    <Link to='/collections'>Collections</Link>
                     <Link to='#'>Sale</Link>
                     <Link to='/'>Home</Link>
                     <Link to='#'>About</Link>

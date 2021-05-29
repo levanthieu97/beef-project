@@ -4,7 +4,12 @@ import {HotNewsComponent, Breadcrumb, GalleryComponent} from '../../../component
 const ProductsComponent = (props) => {
     const [showBlock, setShowBlock] = useState(true);
     const listImageProducts =[
-        
+        "/beef/images/products/beef-1.jpg",
+        "/beef/images/products/beef-2.jpg",
+        "/beef/images/products/beef-3.jpg",
+        "/beef/images/products/beef-4.jpg",
+        "/beef/images/products/beef-5.jpg",
+        "/beef/images/products/beef-6.jpg",
     ]
     return (
         <React.Fragment>

@@ -1,11 +1,11 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {FILTER_CHECKBOX, FILTER_COLOR} from './FilterType';
+import {FILTER_CHECKBOX} from './FilterType';
 import {useForm} from 'react-hook-form';
 import CheckBox from './checkbox-component';
-import CheckBoxColor from './checkbox-color-component'
 import {typeFilter} from '../../core/Foundation';
 import {setFilterOpen} from '../../store/actions/GlobalAction';
+import { GiSteak, GiPig, GiSadCrab } from "react-icons/gi";
 
 const LeftFilterComponent = (props) => {
 
@@ -14,38 +14,39 @@ const LeftFilterComponent = (props) => {
     const dispatch = useDispatch();
     const getFilterProducts = () => {};
 
+    const iconProductType = (typeId) => {
+        switch(typeId) {
+            case typeFilter.BEEF:
+                return <GiSteak/>;
+            case typeFilter.PORK:
+                return <GiPig/>
+            case typeFilter.SEAFOOD:
+                return <GiSadCrab/>
+            default: 
+                return <GiSteak/>
+        }
+    }
+
     const filterByCheckBox = () => {
         return FILTER_CHECKBOX.map((type, index) => {
             const filterType = type.filterType;
             return <div className="products-filter__block" key={index}>
-                    <button type="button">{type.name}</button>
-                    <div className={`products-filter__block__content ${type.id === typeFilter.size ? "checkbox-square-wrapper" : ""}`}>
+                    <button type="button">
+                        {iconProductType(type.id)}
+                        <span>{type.name}</span>
+                    </button>
+                    <div className={`products-filter__block__content`}>
                         {filterType.map(items => {
                             return <CheckBox
                                 type={items.type}
                                 key={items.id}
-                                refs={register({required: true})}
+                                // refs={register({required: true})}
                                 name={items.name}
                                 label={items.label}
                             />
                         })}
                     </div>
                 </div>            
-        })
-    }
-
-    const filterByColor = () => {
-        return FILTER_COLOR.map((type, index) => {
-            return <div className="products-filter__block" key={index}>
-                <button type="button">{type.name}</button>
-                <div className="products-filter__block__content">
-                    <div className="checkbox-color-wrapper">
-                        {type.filterType.map(items => {
-                            return <CheckBoxColor key={items.id} name="product-color" color={items.color} />
-                        })}
-                    </div>
-                </div>
-            </div> 
         })
     }
 
@@ -73,7 +74,6 @@ const LeftFilterComponent = (props) => {
                     <div className={`products-filter__items ${filterOpen ? 'products-filter__wrapper-items' : ''}`}>
                         {closeFilterOpen()}
                         {filterByCheckBox()}
-                        {filterByColor()}
                         <button type="submit" className="btn btn-submit btn--rounded btn--yellow">Apply</button>
                     </div>
                 </div>

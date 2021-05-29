@@ -129,6 +129,7 @@
         width: 80%;
       }
       .product-add-cart {
+        position: relative;
         width: 20%;
         .btn-add-item {
           position: absolute;
@@ -181,11 +182,13 @@
           }
         }
         span {
+          line-height: 15px;
           color: #cecece;
           font-size: 13px;
           font-weight: 400;
           text-decoration: line-through;
           @include breakpoint(desktop-lg) {
+            line-height: 19px;
             font-size: 15px;
           }
         }
