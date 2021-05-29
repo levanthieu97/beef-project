@@ -1,5 +1,5 @@
 import React from 'react';
-import {SliderTopComponent, BannerCategoryComponent, TopSellComponent, BenefitBannerComponent, ProductTypeBannerComponent, NewArrivalsComponent, BlogNewsComponent} from '../../../components';
+import {SliderTopComponent, BannerCategoryComponent, TopSellComponent, ProductTypeBannerComponent, NewArrivalsComponent, BlogNewsComponent} from '../../../components';
 
 const components = [
     SliderTopComponent,

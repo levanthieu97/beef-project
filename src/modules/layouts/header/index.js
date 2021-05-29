@@ -30,7 +30,7 @@ const Header = (props) => {
         return () => {
             isOnTopHeader();
         }
-    },[]);
+    },[onTop]);
 
     const closeMenu = () => {
         setMenuOpen(false);
