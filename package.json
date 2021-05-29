@@ -100,8 +100,8 @@
   },
   "scripts": {
     "start-js": "node scripts/start.js",
-    "start": "npm-run-all -p watch-scss watch-json-localize --max_old_space_size=4096 start-js",
-    "build": "npm run build-scss --max_old_space_size=4096 && npm run merge-json-localize && node scripts/build.js",
+    "start": "npm-run-all -p watch-scss watch-json-localize --max_old_space_size=1024 start-js",
+    "build": "npm run build-scss --max_old_space_size=1024 && npm run merge-json-localize && node scripts/build.js",
     "test": "node scripts/test.js",
     "watch-scss": "gulp loadSass && gulp beef-sass && gulp watch",
     "build-scss": "gulp loadSass && gulp beef-sass",
