@@ -40,13 +40,13 @@ const ContentCollectionComponent = (props) => {
                     </div>
                 </form>
             </div>
-            <LazyLoad>
+            {/* <LazyLoad> */}
                 <section className="products-list">
                     {data.map(item => (
                         <ProductItemComponent {...item} key={item.id}/>
                     ))}
                 </section>
-            </LazyLoad>
+            {/* </LazyLoad> */}
             <div className="products-content__list-pages">
                 <PaginationProductsComponent totalRecords={80} pageLimit={10} neighbors={1} onPageChanged={onChangeCurrPage}/>
             </div>
