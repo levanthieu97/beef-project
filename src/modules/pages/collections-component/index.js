@@ -16,6 +16,7 @@ const CollectionsComponent = (props) => {
         <React.Fragment>
             <HotNewsComponent />
             <Breadcrumb />
+            
             <section className="products-page">
                 <div className="component-container">
                     {renderComponent}

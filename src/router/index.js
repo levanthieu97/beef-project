@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter, Switch } from 'react-router-dom';
-import RouteChild from './routes';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { DEFAULT_ROUTES } from './path';
 import { EVENT } from '../events/ListEvents';
 import CommonActions from '../common/CommonActions';
+import PageContainer from '../modules/pages/page-container';
 import { updateWaitLoading } from '../store/actions/GlobalAction';
 import '../styles/css/beef/progress.css';
+import {v4 as uuid} from 'uuid';
 
 const Routes = (props) => {
     const dispatch = useDispatch();
@@ -31,8 +32,11 @@ const Routes = (props) => {
     function renderRoutes() {
         return ( 
             <Switch>               
-                {DEFAULT_ROUTES.map((route, i) => (
-                    <RouteChild key={i} {...route} />
+                {DEFAULT_ROUTES.map(route=> (
+                    <Route key={uuid()}
+                    exact={route.exact} 
+                    path={route.path} 
+                    render={routeProps => <PageContainer {...routeProps} title={route.meta.title} classNamePage={route.classNamePage} container={route.container}/>}/>
                 ))}
             </Switch>    
         )

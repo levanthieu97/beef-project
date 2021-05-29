@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsCheck } from "react-icons/bs";
 
 const BenefitBannerComponent = (props) => {
   return (
@@ -10,11 +9,11 @@ const BenefitBannerComponent = (props) => {
           <div className="featured-item__content">
             <h1 className="benefit-title">HEALTH & BENEFIT</h1>
             <div className="benefit-info">
-              <p><BsCheck /> It Lowers Risk of Heart Disease</p>
-              <p><BsCheck /> It Reduce Risk of Alzheimer's Disease</p>
-              <p><BsCheck /> It Can Help Lower Symptoms of Depression</p>
-              <p><BsCheck /> It's a Great Source of Vitamin D</p>
-              <p><BsCheck /> It Helps Improve Vision and Flood Health</p>
+              <p> It Lowers Risk of Heart Disease</p>
+              <p> It Reduce Risk of Alzheimer's Disease</p>
+              <p> It Can Help Lower Symptoms of Depression</p>
+              <p> It's a Great Source of Vitamin D</p>
+              <p> It Helps Improve Vision and Flood Health</p>
             </div>
             <Link to="#" className="btn btn--rounded">Learn More</Link>
           </div>

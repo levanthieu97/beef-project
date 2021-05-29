@@ -1,57 +1,84 @@
 export const FILTER_CHECKBOX = [
     {
         id:1,
-        name: "Product type",
+        name: "BEEF",
         filterType: [
             {
                 id: 1,
-                label: 'T-Shirts',
+                label: 'Dry Aged Beef',
                 name: 'product-type'
             },
             {
                 id: 2,
-                label: 'Polo',
+                label: 'Wagyu Beef',
                 name: 'product-type'
             },
             {
                 id: 3,
-                label: 'Jacket',
+                label: 'T-Bone Steaks',
                 name: 'product-type'
             },
             {
                 id: 4,
-                label: 'Hoodies & Sweatshirts',
+                label: 'Ribeye Steaks',
+                name: 'product-type'
+            },
+            {
+                id: 5,
+                label: 'Other Cuts',
                 name: 'product-type'
             }
         ]
     },
     {
         id: 2,
-        name: "Size",
+        name: "PORK",
         filterType: [
             {
                 id: 1,
-                label: 'XS',
-                name: 'product-size',
-                type: 'square'
+                label: 'Chops & Tenderloins',
+                name: 'product-type',
             },
             {
                 id: 2,
-                label: 'S',
-                name: 'product-size',
-                type: 'square'
+                label: 'Pre-Cut',
+                name: 'product-type',
             },
             {
                 id: 3,
-                label: 'M',
-                name: 'product-size',
-                type: 'square'
+                label: 'Sausage & Ground',
+                name: 'product-type',
+            }
+        ]
+    },
+    {
+        id: 3,
+        name: "SEAFOOD",
+        filterType: [
+            {
+                id: 1,
+                label: 'Crab',
+                name: 'product-type'
+            },
+            {
+                id: 2,
+                label: 'Fish Whole',
+                name: 'product-type'
+            },
+            {
+                id: 3,
+                label: 'Lobster',
+                name: 'product-type'
             },
             {
                 id: 4,
-                label: 'L',
-                name: 'product-size',
-                type: 'square'
+                label: 'Shrimp',
+                name: 'product-type'
+            },
+            {
+                id: 5,
+                label: 'Oysters',
+                name: 'product-type'
             }
         ]
     }

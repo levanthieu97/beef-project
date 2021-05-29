@@ -1,0 +1,35 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin paginationComponent {
+  .products-content__list-pages {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 45px;
+    .pagination-list {
+      margin-top: 0;
+      margin-bottom: 0;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      .page-item {
+        &.active {
+          .page-link {
+            color: var(--color-white) !important;
+            background-color: var(--color-text) !important;
+            border-color: var(--color-text) !important;
+          }
+        }
+        .page-link {
+          padding: 0.35rem 0.4rem;
+          min-width: 2.5rem;
+          text-align: center;
+          box-shadow: none !important;
+          border-color: var(--color-text) !important;
+          color: var(--color-text) !important;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

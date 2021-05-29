@@ -52,21 +52,21 @@ const FooterComponent = () => {
                   </li>
                 </ul>
                 <ul className="social-links">
-                    <div className="title">
-                        <span>Social Media</span>
-                    </div>
+                  <div className="title">
+                    <span>Social Media</span>
+                  </div>
                   <li>
-                    <Link className="social-fb">
+                    <Link className="social-fb" to="#">
                       <FaFacebookF></FaFacebookF>
                     </Link>
                   </li>
                   <li>
-                    <Link className="social-google">
+                    <Link className="social-google" to="#">
                       <FaGooglePlusG></FaGooglePlusG>
                     </Link>
                   </li>
                   <li>
-                    <Link className="social-instagram">
+                    <Link className="social-instagram" to="#">
                       <FaInstagram></FaInstagram>
                     </Link>
                   </li>
@@ -74,13 +74,18 @@ const FooterComponent = () => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12 footer-column">
-                <div className="footer-widget subscribe__content">
-                    <h4>Subscribe to our newsletter and receive exclusive offers every week</h4>
-                    <form className="subscribe__form">
-                        <input type="email" placeholder="Email" />
-                        <button type="submit" className="btn btn--rounded">Subscribe</button>
-                    </form>
-                </div>
+              <div className="footer-widget subscribe__content">
+                <h4>
+                  Subscribe to our newsletter and receive exclusive offers every
+                  week
+                </h4>
+                <form className="subscribe__form">
+                  <input type="email" placeholder="Email" />
+                  <button type="submit" className="btn btn--rounded">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,54 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin marqueeComponent {
+  .hot-new__container {
+    border-radius: 3px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: opacity 0.5s ease-in-out;
+    background-color: #f0eeef;
+    .body-wrapper {
+      font-size: 12px;
+      width: 100%;
+
+      color: #042d56;
+      @keyframes scrollLeft {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .marquee-container {
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        max-width: 343px;
+        @include breakpoint(phone) {
+          max-width: 618px;
+        }
+        @include breakpoint(tablet-lg) {
+          max-width: 948px;
+        }
+        @include breakpoint(desktop-lg) {
+          max-width: 1248px;
+        }
+        .marquee {
+          font-weight: 400;
+          display: inline-block;
+          white-space: nowrap;
+          padding-left: 101%;
+          span {
+            margin-right: 120px;
+          }
+        }
+      }
+    }
+  }
+}
