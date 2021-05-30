@@ -38,6 +38,9 @@ gulp.task('loadSass', function(done) {
     }
 
     gulp.src('.')
+    .pipe(sass({
+        includePaths: ['node_modules', 'src']
+    }))
     .pipe(inject(pathSass, sassOptions))
     .pipe(gulp.dest(paths.dest_Beef_CSS_Dir))
     .on('end', done);
