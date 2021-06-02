@@ -26,7 +26,11 @@ html {
 @import "mixins/breakpoints";
 @import "mixins/grid-framework";
 @import "mixins/grid";
+@import "mixins/lists";
+@import "mixins/border-radius";
+@import "mixins/pagination";
 
 @import "grid";
 @import "utilities/display";
 @import "utilities/flex";
+@import "pagination";

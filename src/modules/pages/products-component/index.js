@@ -9,7 +9,7 @@ const ProductsComponent = (props) => {
         "/beef/images/products/beef-3.jpg",
         "/beef/images/products/beef-4.jpg",
         "/beef/images/products/beef-5.jpg",
-        "/beef/images/products/beef-6.jpg",
+        "/beef/images/products/beef-7.jpg",
     ]
     return (
         <React.Fragment>

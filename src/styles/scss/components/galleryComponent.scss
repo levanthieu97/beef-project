@@ -1,0 +1,76 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin galleryComponent {
+    .product-gallery {
+        display: flex;
+        margin-bottom: 40px;
+        @include breakpoint(phone) {
+          margin-right: 110px;
+          margin-bottom: 0;
+        }
+        .product-gallery__thumbs {
+          display: none;
+          height: 300px;
+          @include breakpoint(phone) {
+            width: 97px;
+            display: block;
+            height: 476px;
+            margin-right: 20px;
+          }
+          .swiper-wrapper {
+            height: 490px;
+          }
+          .swiper-btn {
+            height: 28px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            left: 50%;
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            font-size: 20px;
+            border-radius: 2px;
+            background-color: #fff;
+            color: #d8d8d8;
+            border: 1px solid #d8d8d8;
+            transition: background-color 1s ease ;
+            &:hover {
+                border-color: #3eb54a;
+                background-color: #3eb54a;
+                color: #fff;
+              }
+            &.btn-up {
+                margin-bottom: 10px;
+            }
+            &.btn-down {
+                margin-top: 10px;
+            }
+          }
+        }
+        .product-gallery__thumb {
+          width: 100%;
+          height: 97px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+          }
+        }
+        .product-gallery__image {
+          height: 300px;
+          width: 100%;
+          @include breakpoint(phone) {
+            width: 516px;
+            height: 576px;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+            border-radius: 3px;
+          }
+        }
+      }    
+}
