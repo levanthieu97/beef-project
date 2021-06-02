@@ -1,5 +1,6 @@
 import React, {useState, useRef}  from 'react';
 import Swiper from 'react-id-swiper';
+import {BsCaretUp, BsCaretDown} from 'react-icons/bs';
 
 const GalleryComponent = (props) => {
     const [mainImage, setMainImage] = useState(props.images[0]);
@@ -10,7 +11,7 @@ const GalleryComponent = (props) => {
         spaceBetween: 30,
         centeredSlides: false,
         watchOverflow: true,
-        slidesPerView: 2.2,
+        slidesPerView: 4,
         direction: "vertical",
         controller: {
             inverse: true
@@ -40,7 +41,7 @@ const GalleryComponent = (props) => {
     return (
         <section className="product-gallery">
             <div className="product-gallery__thumbs">
-                <button type="button" className="swiper-btn btn-up" onClick={goUp}><i>&uarr;</i></button>
+                {(props.images.length > 4) && <button type="button" className="swiper-btn btn-up" onClick={goUp}><BsCaretUp/></button> } 
                 <Swiper {...params} ref={swiperRef}>
                     {
                         props.images.map((image,index) => (
@@ -50,7 +51,7 @@ const GalleryComponent = (props) => {
                         ))
                     }
                 </Swiper>                    
-                <button type="button" className="swiper-btn btn-down" onClick={goDown}><i>&darr;</i></button>
+                {(props.images.length > 4) && <button type="button" className="swiper-btn btn-down" onClick={goDown}><BsCaretDown/></button>}
             </div>
 
             <div className="product-gallery__image">
