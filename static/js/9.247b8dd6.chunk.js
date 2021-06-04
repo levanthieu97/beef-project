@@ -1,0 +1,2 @@
+(this["webpackJsonpbeef-project"]=this["webpackJsonpbeef-project"]||[]).push([[9],{90:function(e,c,t){"use strict";t.r(c);var n=t(0),s=t.n(n),r=t(65),a=t(2),j=[r.g,r.d],o=function(e){var c=j.map((function(e,c){return Object(a.jsx)(e,{},c)}));return Object(a.jsxs)(s.a.Fragment,{children:[Object(a.jsx)(r.f,{}),Object(a.jsx)(r.c,{}),Object(a.jsx)("section",{className:"products-page",children:Object(a.jsx)("div",{className:"component-container",children:c})})]})};c.default=s.a.memo(o)}}]);
+//# sourceMappingURL=9.247b8dd6.chunk.js.map
