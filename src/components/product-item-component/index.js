@@ -1,17 +1,24 @@
 import React from 'react';
+import {useDispatch} from "react-redux";
 import {Link} from 'react-router-dom';
+import CommonActions from '../../common/CommonActions';
+import {selectedProduct} from '../../store/actions/ProductsAction';
 
 const ProductItemComponent = (props) => {
-
+    const dispatch = useDispatch();
     const activeFavoriteItem = () => {
         console.log("lalalalala");
-    } 
+    }
+
+    const choseProduct = (product) => {
+        dispatch(selectedProduct(product));
+    }
 
     return (
         <div className="product-item">
             <div className="product__image">
                 <button type="button" className="btn-heart" onClick={() => activeFavoriteItem()}><i className="icon-heart"></i></button>
-                <Link to={`/products/${props.id}` }>
+                <Link to={`/products/${CommonActions.replaceProductName(props.name)}`} onClick={() => choseProduct(props)}>
                     <img className="image-primary" src={props.primaryImage} alt="product" />
                     <img className="image-hover" src={props.hoverImage} alt="product"/>
                     { props.discount && props.discount > 0 && 
@@ -22,7 +29,7 @@ const ProductItemComponent = (props) => {
             
             <div className="product__description">
                 <div className="product-info">
-                    <Link to={`/products/${props.id}`}>
+                    <Link to={`/products/${CommonActions.replaceProductName(props.name)}`} onClick={() => choseProduct(props)}>
                         <h3 >{props.name}</h3>
                     </Link>
                     <div className={"product__price " + (props.discount ? 'product__price--discount' : '')} >

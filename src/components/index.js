@@ -26,3 +26,4 @@ export {default as ContentCollectionComponent} from './content-collection-compon
 *   PRODUCT PAGE
 */
 export {default as GalleryComponent} from './gallery-component';
+export {default as ProductDetailsInfo} from './product-details-info-component';

@@ -1,5 +1,6 @@
 import React from 'react';
-import {EVENT} from '../events/ListEvents'
+import {EVENT} from '../events/ListEvents';
+import _ from 'lodash';
 
 export default class CommonActions {
     static loadingProgress = () => {
@@ -39,6 +40,9 @@ export default class CommonActions {
         console.log(component);
         return component;
     }
-
+    
+    static replaceProductName(productName) {
+        return _.kebabCase(productName);
+    }
 }
 

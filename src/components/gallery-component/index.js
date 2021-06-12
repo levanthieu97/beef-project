@@ -4,6 +4,8 @@ import {BsCaretUp, BsCaretDown} from 'react-icons/bs';
 
 const GalleryComponent = (props) => {
     const [mainImage, setMainImage] = useState(props.images[0]);
+    console.log(props.images[0]);
+    console.log(mainImage);
     const swiperRef = useRef(null);
     const params = {
         observer: true,
@@ -11,15 +13,15 @@ const GalleryComponent = (props) => {
         spaceBetween: 30,
         centeredSlides: false,
         watchOverflow: true,
-        slidesPerView: 4,
+        slidesPerView: 4.3,
         direction: "vertical",
         controller: {
             inverse: true
         },
         breakpoints: {
             1024: {
-                slidesPerView: 4,
-                spaceBetween: 15
+                slidesPerView: 4.3,
+                spaceBetween: 10
             }
         }
     }
@@ -45,7 +47,7 @@ const GalleryComponent = (props) => {
                 <Swiper {...params} ref={swiperRef}>
                     {
                         props.images.map((image,index) => (
-                            <div key={index} className="product-gallery__thumb" onClick={() => setMainImage(image)}>
+                            <div key={index} className={`product-gallery__thumb ${image === mainImage ? 'img-active' : ''}`} onClick={() => setMainImage(image)}>
                                 <img src={image} alt=""/>
                             </div>
                         ))
