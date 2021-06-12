@@ -1,11 +1,9 @@
 import React, {useRef ,useEffect, useState} from 'react';
 import useOnClickOutSide from 'use-onclickoutside';
 import { useLocation , Link } from 'react-router-dom';
-import Logo from '../../../assets/icons/logo';
 
 const Header = (props) => {
     const location = useLocation();
-    console.log(location);
     const [onTop, setOnTop] = useState(location.pathname === '/' ? true : false);
     const [searchOpen, setSearchOpen] = useState(false);
     // apply to mobile
@@ -15,7 +13,6 @@ const Header = (props) => {
 
     const isOnTopHeader = () => {
         if(window.pageYOffset === 0) {
-            console.log(onTop);
             setOnTop(true);
         } else {
             setOnTop(false);
@@ -25,12 +22,11 @@ const Header = (props) => {
     useEffect(() => {
         if(location.pathname !== '/') return;
         isOnTopHeader();
-        console.log(onTop);
         window.onscroll = () => { isOnTopHeader(); };
         return () => {
             isOnTopHeader();
         }
-    },[onTop]);
+    },[location]);
 
     const closeMenu = () => {
         setMenuOpen(false);
@@ -51,11 +47,11 @@ const Header = (props) => {
                     <h1 className='site-logo'>NOW DELI</h1>
                 </Link>
                 <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
-                    <Link to='/collections'>Collections</Link>
-                    <Link to='#'>Sale</Link>
-                    <Link to='/'>Home</Link>
-                    <Link to='#'>About</Link>
-                    <Link to='#'>FAQ</Link>
+                    <Link to='/collections'>COLLECTIONS</Link>
+                    <Link to='#'>GIFT CENTER</Link>
+                    <Link to='/'>SUBSCRIPTIONS</Link>
+                    <Link to='#'>GEAR</Link>
+                    <Link to='#'>WE ARE ND</Link>
                 </nav>
                 <div className='site-header__actions'>
                     <button ref={searchRef} className={`search-form-wrapper ${searchOpen ? 'search-form--active' : ''}`}>

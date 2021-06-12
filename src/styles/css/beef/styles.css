@@ -277,6 +277,7 @@ button {
 @use '../partials/breakpoints.scss' as *;
 @use '../partials/breakpoints.scss' as *;
 @use '../partials/breakpoints.scss' as *;
+@use '../partials/breakpoints.scss' as *;
 @-webkit-keyframes watchAnimation {
   from {
     -webkit-transform: rotate(0deg) translateX(10px) rotate(0deg); }
@@ -794,7 +795,7 @@ a:hover, a:focus {
           .site-footer .site-footer__top .subscribe__content .subscribe__form .btn {
             padding: 13px 20px;
             font-size: 13px;
-            margin-top: 0; } }
+            margin-top: 1px; } }
   .site-footer .site-footer__bottom {
     padding: 20px; }
     @media (min-width: 767px) {
@@ -1893,25 +1894,26 @@ a:hover, a:focus {
 
 .product-gallery {
   display: flex;
-  margin-bottom: 40px; }
+  margin-bottom: 20px; }
   @media (min-width: 767px) {
     .product-gallery {
-      margin-right: 110px;
+      margin-right: 50px;
       margin-bottom: 0; } }
   .product-gallery .product-gallery__thumbs {
     display: none;
     height: 300px; }
     @media (min-width: 767px) {
       .product-gallery .product-gallery__thumbs {
-        width: 97px;
+        width: 105px;
         display: block;
         height: 476px;
         margin-right: 20px; } }
     .product-gallery .product-gallery__thumbs .swiper-wrapper {
-      height: 490px; }
+      height: 500px;
+      width: 95px; }
     .product-gallery .product-gallery__thumbs .swiper-btn {
       height: 28px;
-      width: 100%;
+      width: 97px;
       position: relative;
       text-align: center;
       left: 50%;
@@ -1933,7 +1935,12 @@ a:hover, a:focus {
         margin-top: 10px; }
   .product-gallery .product-gallery__thumb {
     width: 100%;
-    height: 97px; }
+    height: 97px;
+    padding: 4px; }
+    .product-gallery .product-gallery__thumb.img-active {
+      border: 1px solid #008f68; }
+      .product-gallery .product-gallery__thumb.img-active img {
+        box-shadow: #3eb54a 0px 5px 10px; }
     .product-gallery .product-gallery__thumb img {
       width: 100%;
       height: 100%;
@@ -1952,6 +1959,95 @@ a:hover, a:focus {
       object-position: center;
       object-fit: cover;
       border-radius: 3px; }
+
+.product-details-info {
+  position: relative;
+  min-width: 350px; }
+  .product-details-info .product-content__intro {
+    border-bottom: thin dashed #e5e5e5;
+    margin-bottom: 30px; }
+  .product-details-info .product-filter-item {
+    margin-bottom: 38px; }
+    .product-details-info .product-filter-item:last-of-type {
+      margin-bottom: 0; }
+    .product-details-info .product-filter-item h5 {
+      font-weight: 300;
+      font-size: 13px;
+      margin-bottom: 19px; }
+      .product-details-info .product-filter-item h5 strong {
+        font-weight: 700; }
+    .product-details-info .product-filter-item .checkbox-size-wrapper .checkbox-size {
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+      border: none; }
+      @media (min-width: 767px) {
+        .product-details-info .product-filter-item .checkbox-size-wrapper .checkbox-size {
+          width: 95px;
+          height: 65px;
+          margin-right: 13px; } }
+      .product-details-info .product-filter-item .checkbox-size-wrapper .checkbox-size .checkbox__check {
+        border: 1px solid #d4d4d4; }
+      .product-details-info .product-filter-item .checkbox-size-wrapper .checkbox-size .checkbox__size {
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px; }
+        @media (min-width: 767px) {
+          .product-details-info .product-filter-item .checkbox-size-wrapper .checkbox-size .checkbox__size {
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px; } }
+  .product-details-info .product__prices {
+    margin-bottom: 15px;
+    display: flex; }
+    .product-details-info .product__prices h4 {
+      font-weight: 400;
+      color: #ff0000;
+      font-size: 16px; }
+      @media (min-width: 767px) {
+        .product-details-info .product__prices h4 {
+          font-size: 22px; } }
+    .product-details-info .product__prices .price-discount {
+      margin-left: 15px;
+      font-weight: 400;
+      font-size: 15px;
+      color: #cecece;
+      text-decoration: line-through; }
+      @media (min-width: 767px) {
+        .product-details-info .product__prices .price-discount {
+          font-size: 20px; } }
+    .product-details-info .product__prices .products__unit {
+      font-weight: 400;
+      font-size: 15px;
+      color: #ff0000; }
+      @media (min-width: 767px) {
+        .product-details-info .product__prices .products__unit {
+          font-size: 20px; } }
+  .product-details-info .product__id {
+    display: inline-block;
+    color: #b2b2b2;
+    font-size: 16px;
+    margin-bottom: 10px; }
+  .product-details-info .product__name {
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 9px; }
+  .product-details-info .product-on-sale {
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 9px;
+    text-transform: uppercase;
+    border-radius: 40px;
+    margin-bottom: 15px;
+    display: inline-block; }
+    @media (min-width: 767px) {
+      .product-details-info .product-on-sale {
+        font-size: 12px;
+        margin-bottom: 25px; } }
 
 .search-form-wrapper {
   position: relative;
@@ -2130,41 +2226,39 @@ a:hover, a:focus {
     color: var(--color-orange);
     background: var(--color-orange-light); }
 
-.checkbox-color-wrapper {
+.checkbox-size-wrapper {
   display: flex;
   position: relative; }
-  .checkbox-color-wrapper .checkbox-color {
-    width: calc(100% / 6); }
 
-.checkbox-color {
+.checkbox-size {
   font-weight: 300;
   font-size: 14px;
   display: flex;
   color: #000;
   margin-bottom: 18px;
   align-items: center; }
-  .checkbox-color .checkbox__check {
+  .checkbox-size .checkbox__check {
     display: block;
     width: 100%;
+    height: 65px;
     position: relative;
-    padding-bottom: 100%;
     border-top: 1px solid #d4d4d4;
     border-bottom: 1px solid #d4d4d4;
     border-right: 1px solid #d4d4d4; }
-    .checkbox-color .checkbox__check .checkbox__color {
+    .checkbox-size .checkbox__check .checkbox__size {
       position: absolute;
       top: 8px;
       left: 8px;
       right: 8px;
       bottom: 8px; }
-  .checkbox-color:first-of-type .checkbox__check {
+  .checkbox-size:first-of-type .checkbox__check {
     border-left: 1px solid #d4d4d4; }
-  .checkbox-color input {
+  .checkbox-size input {
     height: 0;
     width: 0;
     display: none;
     overflow: hidden; }
-  .checkbox-color input:checked + .checkbox__check {
+  .checkbox-size input:checked + .checkbox__check {
     background-color: #dbdbdb; }
 
 @media (min-width: 767px) {
@@ -2482,94 +2576,6 @@ a:hover, a:focus {
           padding: 12px 28px; } }
       .product-single .product-single__info .product-single__info-btns .btn.btn--active {
         border: 1px solid var(--color-orange); }
-
-.product-content {
-  position: relative; }
-  .product-content .product-content__intro {
-    margin-bottom: 40px; }
-    @media (min-width: 767px) {
-      .product-content .product-content__intro {
-        margin-bottom: 60px; } }
-  .product-content .product-filter-item {
-    margin-bottom: 38px; }
-    .product-content .product-filter-item:last-of-type {
-      margin-bottom: 0; }
-    .product-content .product-filter-item h5 {
-      font-weight: 300;
-      font-size: 13px;
-      margin-bottom: 19px; }
-      .product-content .product-filter-item h5 strong {
-        font-weight: 700; }
-    .product-content .product-filter-item .checkbox-color-wrapper .checkbox-color {
-      width: 30px;
-      height: 30px;
-      margin-right: 8px;
-      border: none; }
-      @media (min-width: 767px) {
-        .product-content .product-filter-item .checkbox-color-wrapper .checkbox-color {
-          width: 43px;
-          height: 43px;
-          margin-right: 13px; } }
-      .product-content .product-filter-item .checkbox-color-wrapper .checkbox-color .checkbox__check {
-        border: 1px solid #d4d4d4; }
-      .product-content .product-filter-item .checkbox-color-wrapper .checkbox-color .checkbox__color {
-        top: 4px;
-        left: 4px;
-        right: 4px;
-        bottom: 4px; }
-        @media (min-width: 767px) {
-          .product-content .product-filter-item .checkbox-color-wrapper .checkbox-color .checkbox__color {
-            top: 8px;
-            left: 8px;
-            right: 8px;
-            bottom: 8px; } }
-  .product-content .product__prices {
-    display: flex; }
-    .product-content .product__prices h4 {
-      font-weight: 400;
-      color: #ff0000;
-      font-size: 18px; }
-      @media (min-width: 767px) {
-        .product-content .product__prices h4 {
-          font-size: 30px; } }
-    .product-content .product__prices span {
-      margin-left: 30px;
-      font-weight: 400;
-      font-size: 18px;
-      color: #cecece; }
-      @media (min-width: 767px) {
-        .product-content .product__prices span {
-          font-size: 30px; } }
-  .product-content .product__id {
-    top: -10px;
-    right: 0;
-    text-align: right;
-    line-height: 146%;
-    color: #cecece;
-    font-size: 12px;
-    position: absolute; }
-  .product-content .product__name {
-    font-size: 20px;
-    font-weight: 300;
-    margin-bottom: 9px; }
-    @media (min-width: 767px) {
-      .product-content .product__name {
-        font-size: 30px;
-        margin-bottom: 15px; } }
-  .product-content .product-on-sale {
-    background-color: #ff0000;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 5px 9px;
-    text-transform: uppercase;
-    border-radius: 40px;
-    margin-bottom: 15px;
-    display: inline-block; }
-    @media (min-width: 767px) {
-      .product-content .product-on-sale {
-        font-size: 12px;
-        margin-bottom: 25px; } }
 
 .review-item {
   display: flex; }

@@ -42,7 +42,7 @@ export const DEFAULT_ROUTES = [
       container: CommonActions.lazyWithPreload(() => import('../modules/pages/products-component'))
     },
     {
-      path: '/403',
+      pathUrl: '/403',
       meta: {
         title: 'Access Denied'
       },
@@ -51,7 +51,7 @@ export const DEFAULT_ROUTES = [
       pageContainer: 'denyPageContainer'
     },
     {
-      path: '/404',
+      pathUrl: '/404',
       meta: {
         title: 'Not Found'
       },
@@ -61,7 +61,7 @@ export const DEFAULT_ROUTES = [
       container: CommonActions.lazyWithPreload(() => import('../modules/pages/page-not-found-component'))
     },
     {
-      path: '/500',
+      pathUrl: '/500',
       meta: {
         title: 'Internal Error Server'
       },

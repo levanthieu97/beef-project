@@ -1,0 +1,110 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin productDetailsInfoComponent {
+  .product-details-info {
+    position: relative;
+    min-width: 350px;
+    .product-content__intro {
+      border-bottom: thin dashed #e5e5e5;
+      margin-bottom: 30px;
+    }
+    .product-filter-item {
+      margin-bottom: 38px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      h5 {
+        font-weight: 300;
+        font-size: 13px;
+        margin-bottom: 19px;
+        strong {
+          font-weight: 700;
+        }
+      }
+      .checkbox-size-wrapper {
+        .checkbox-size {
+          width: 30px;
+          height: 30px;
+          margin-right: 8px;
+          border: none;
+          @include breakpoint(phone) {
+            width: 95px;
+            height: 65px;
+            margin-right: 13px;
+          }
+          .checkbox__check {
+            border: 1px solid #d4d4d4;
+          }
+          .checkbox__size {
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            @include breakpoint(phone) {
+              top: 8px;
+              left: 8px;
+              right: 8px;
+              bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+    .product__prices {
+      margin-bottom: 15px;;
+      display: flex;
+      h4 {
+        font-weight: 400;
+        color: #ff0000;
+        font-size: 16px;
+        @include breakpoint(phone) {
+          font-size: 22px;
+        }
+      }
+      .price-discount {
+        margin-left: 15px;
+        font-weight: 400;
+        font-size: 15px;
+        color: #cecece;
+        text-decoration: line-through;
+        @include breakpoint(phone) {
+          font-size: 20px;
+        }
+      }
+      .products__unit {
+        font-weight: 400;
+        font-size: 15px;
+        color: #ff0000;
+        @include breakpoint(phone) {
+          font-size: 20px;
+        }
+      }
+    }
+    .product__id {
+      display: inline-block;
+      color: #b2b2b2;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .product__name {
+      font-size: 34px;
+      font-weight: 500;
+      margin-bottom: 9px;
+    }
+    .product-on-sale {
+      background-color: #ff0000;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 9px;
+      text-transform: uppercase;
+      border-radius: 40px;
+      margin-bottom: 15px;
+      display: inline-block;
+      @include breakpoint(phone) {
+        font-size: 12px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
