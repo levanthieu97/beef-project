@@ -5,7 +5,6 @@ import {v1 as uuid} from "uuid"
 const MarqueeComponent = (props) => {
     const marquee = useRef();
     const defaultTime = 7;
-    console.log(props);
     useEffect(() => {
         const currentMarquee = marquee.current;
         if (currentMarquee) {

@@ -1,11 +1,19 @@
-import React, {useEffect, useState, useReducer} from 'react';
+import React, {useEffect, useReducer} from 'react';
 import {useSelector} from "react-redux";
 import _ from 'lodash';
 import {data} from '../../../components/top-sell-component/data';
-import {HotNewsComponent, Breadcrumb, GalleryComponent, ProductDetailsInfo} from '../../../components';
+import {
+    HotNewsComponent, 
+    Breadcrumb, 
+    GalleryComponent, 
+    ProductDetailsInfo, 
+    TabProductDetail, 
+    RelatedProductComponent,
+    CustomerReviewComponent
+} from '../../../components';
 
 const ProductsComponent = (props) => {
-    const [showBlock, setShowBlock] = useState(true);
+    console.log(props);
     const {selectedProduct} = useSelector(state => state.productsSlice);
     
     const [state, setState] = useReducer(
@@ -42,16 +50,17 @@ const ProductsComponent = (props) => {
                 <div className="component-container">
                     <div className="product-single__content">
                         <GalleryComponent images={listImageProducts}/>
-                        <ProductDetailsInfo productInfo={state.choseProduct}/>
+                        <ProductDetailsInfo {...selectedProduct}/>
                     </div>
-                
+                    <div className="related-products__container">
+                        <RelatedProductComponent />
+                    </div>
                     <div className="product-single__info">
-                    <div className="product-single__info-btns">
-                        <button type="button" onClick={() => setShowBlock(true)} className={`btn btn--rounded ${showBlock ? 'btn--active' : ''}`}>Description</button>
-                        <button type="button" onClick={() => setShowBlock(false)} className={`btn btn--rounded ${!showBlock ? 'btn--active' : ''}`}>Reviews (2)</button>
+                        <TabProductDetail/>
                     </div>
-
-          </div>
+                    <div className="customer-review__container">
+                        <CustomerReviewComponent />
+                    </div>
                 </div>
             </section>
 

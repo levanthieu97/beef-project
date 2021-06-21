@@ -7,7 +7,6 @@ import {selectedProduct} from '../../store/actions/ProductsAction';
 const ProductItemComponent = (props) => {
     const dispatch = useDispatch();
     const activeFavoriteItem = () => {
-        console.log("lalalalala");
     }
 
     const choseProduct = (product) => {

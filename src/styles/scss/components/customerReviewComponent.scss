@@ -1,0 +1,34 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin customerReviewComponent {
+    .customer-review__container {
+        clear: both;
+        padding: 20px 0;
+    }
+    .customer-review__wrapper {
+        .title-review {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: var(--font-content);
+        }
+        .heading {
+            margin: 0 0 10px;
+            font-weight: 400;
+            font-size: 22px;
+            @include breakpoint(phone) {
+                font-size: 26px;
+            }
+        }
+        .subheading {
+            font-weight: 700;
+            font-size: 26px;
+            @include breakpoint(phone) {
+                font-size: 30px;
+            }
+        }
+        .review-main {
+            display: block;
+            width: 100%;
+        }
+    }
+}
