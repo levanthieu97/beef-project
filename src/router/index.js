@@ -6,6 +6,7 @@ import { EVENT } from '../events/ListEvents';
 import CommonActions from '../common/CommonActions';
 import PageContainer from '../modules/pages/page-container';
 import { updateWaitLoading } from '../store/actions/GlobalAction';
+import ScrollToTop from '../components/scroll-to-top';
 import '../styles/css/beef/progress.css';
 import {v4 as uuid} from 'uuid';
 
@@ -48,6 +49,7 @@ const Routes = (props) => {
 
     return (
         <BrowserRouter basename=''>
+            <ScrollToTop/>
             <div id="wrapper">
                 {renderRoutes()}
             </div>

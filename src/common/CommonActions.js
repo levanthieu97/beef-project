@@ -16,7 +16,6 @@ export default class CommonActions {
     }
 
     static getActionStyle() {
-        console.log("lô lô")
         const cssLink = 'css/beef/styles.min.css';
         const cssFile = (cssLink.startsWith('http') || cssLink.startsWith('https')) 
                             ? cssLink : `${process.env.PUBLIC_URL}/${cssLink}`;

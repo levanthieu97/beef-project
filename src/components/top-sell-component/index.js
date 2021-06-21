@@ -11,7 +11,7 @@ const TopSellComponent = (props) => {
                     <h4>Top Sell Products</h4>
                 </header>
 
-                <ProductCarouselComponent products={data} loop={true}/>
+                <ProductCarouselComponent products={data} showLoadMore={false}/>
             </div>
         </section>
     )

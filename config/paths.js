@@ -3,6 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
+const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath');
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
@@ -20,8 +21,11 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 //   require(resolveApp('package.json')).homepage,
 //   process.env.PUBLIC_URL
 // );
-
-
+const publicUrlOrPath = getPublicUrlOrPath(
+  process.env.NODE_ENV === 'development',
+  require(resolveApp('package.json')).homepage,
+  process.env.PUBLIC_URL
+);
 
 const envPublicUrl = process.env.PUBLIC_URL;
 
@@ -46,6 +50,7 @@ function getServedPath(appPackageJson) {
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
+  appPath: resolveApp('.'),
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
@@ -58,6 +63,6 @@ module.exports = {
   publicUrl: getPublicUrl(resolveApp('package.json')),
   // swSrc: resolveModule(resolveApp, 'src/service-worker'),
   servedPath: getServedPath(resolveApp('package.json')),
-  // publicUrlOrPath,
+  publicUrlOrPath,
 };
 

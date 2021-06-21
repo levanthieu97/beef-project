@@ -4,8 +4,6 @@ import {BsCaretUp, BsCaretDown} from 'react-icons/bs';
 
 const GalleryComponent = (props) => {
     const [mainImage, setMainImage] = useState(props.images[0]);
-    console.log(props.images[0]);
-    console.log(mainImage);
     const swiperRef = useRef(null);
     const params = {
         observer: true,
@@ -28,14 +26,12 @@ const GalleryComponent = (props) => {
 
     const goUp = () => {
         if(swiperRef.current) {
-            console.log(swiperRef.current.swiper);
             swiperRef.current.swiper.slidePrev();
         }
     }
 
     const goDown = () => {
         if(swiperRef.current) {
-            console.log(swiperRef.current.swiper);
             swiperRef.current.swiper.slideNext();
         }
     }

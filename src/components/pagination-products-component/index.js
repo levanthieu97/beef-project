@@ -75,16 +75,16 @@ const PaginationProductsComponent = (props) => {
 
                             if (page === RIGHT_PAGE) return (
                                 <li key={index} className="page-item">
-                                <Link className="page-link" to="#" aria-label="Next" onClick={() => changePage(currPage +1)}>
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span className="sr-only">Next</span>
-                                </Link>
+                                    <Link className="page-link" to="#" aria-label="Next" onClick={() => changePage(currPage +1)}>
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span className="sr-only">Next</span>
+                                    </Link>
                                 </li>
                             );
 
                             return (
                                 <li key={index} className={`page-item${ currPage === page ? ' active' : ''}`}>
-                                <Link className="page-link" to="#" onClick={() => changePage(page)}>{ page }</Link>
+                                    <Link className="page-link" to="#" onClick={() => changePage(page)}>{ page }</Link>
                                 </li>
                             );
                         })

@@ -17,12 +17,17 @@
         font-size: 23px;
         font-weight: 300;
         text-align: center;
+        font-family: var(--font-content);
         @include breakpoint(phone) {
           font-size: 29px;
         }
       }
+      .title {
+        font-weight: 500;
+      }
     }
     .products-carousel {
+      position: relative;
       .swiper-container {
         .slider-load-more {
           height: initial;
@@ -40,6 +45,39 @@
             color: var(--color-orange);
           }
         }
+      }
+
+      .swiper-btn {
+        position: absolute;
+        top: 40%;
+        visibility: visible;
+        transform: translateY(-40%);
+        font-size: 22px;
+        line-height: 48px;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        border-radius: 50%;
+        
+        @include breakpointMax(phone) {
+          visibility: hidden;
+        }
+        &.no-active {
+          background: #e1ffe4;
+          color: #949494;
+        }
+
+        &.active {
+          background: linear-gradient(#86c440,#3eb54a);
+        }
+      }
+      .swiper-button-prev {   
+        padding-right: 4px;     
+        left: -50px;
+      }
+      .swiper-button-next {
+        padding-left: 4px;
+        right: -50px;
       }
     }
   }

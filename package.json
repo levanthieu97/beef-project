@@ -80,6 +80,7 @@
     "react-icons": "^4.2.0",
     "react-id-swiper": "^4.0.0",
     "react-lazy-load": "^3.1.13",
+    "react-rater": "^6.0.0",
     "react-redux": "^7.2.4",
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.2.0",

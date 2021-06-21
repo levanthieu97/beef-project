@@ -27,3 +27,6 @@ export {default as ContentCollectionComponent} from './content-collection-compon
 */
 export {default as GalleryComponent} from './gallery-component';
 export {default as ProductDetailsInfo} from './product-details-info-component';
+export {default as TabProductDetail} from './tab-product-detail';
+export {default as RelatedProductComponent} from './related-products-component';
+export {default as CustomerReviewComponent} from './customer-review-component';

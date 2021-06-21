@@ -11,7 +11,7 @@ const NewArrivalsComponent = (props) => {
                     <h4>BEEF</h4>
                 </header>
 
-                <ProductCarouselComponent products={data} loop={false}/>
+                <ProductCarouselComponent products={data} showLoadMore={true}/>
             </div>
         </section>
     )

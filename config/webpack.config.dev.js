@@ -10,6 +10,8 @@ const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 const getClientEnvironment = require("./env");
 const paths = require("./paths");
 const eslintFormatter = require("react-dev-utils/eslintFormatter");
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+
 
 // webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -20,6 +22,12 @@ const publicPath = "/";
 const publicUrl = "";
 // Get enviroment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
+const webpackDevClientEntry = require.resolve(
+  'react-dev-utils/webpackHotDevClient'
+);
+const reactRefreshOverlayEntry = require.resolve(
+  'react-dev-utils/refreshOverlayInterop'
+);
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -45,7 +53,7 @@ module.exports = {
     // the line below with these two lines if you prefer the stock client:
     // require.resolve('webpack-dev-server/client') + '?/',
     // require.resolve('webpack/hot/dev-server'),
-    require.resolve("react-dev-utils/webpackHotDevClient"),
+    webpackDevClientEntry,
     // Finally, this is your app's code:
     paths.appIndexJs,
     // We include the app code last so that if there is a runtime error during
@@ -95,7 +103,7 @@ module.exports = {
       // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
-      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson, reactRefreshOverlayEntry]),
     ],
   },
   module: {
@@ -237,6 +245,17 @@ module.exports = {
     // a plugin that prints an error when you attempt to do this.
     // See https://github.com/facebook/create-react-app/issues/240
     new CaseSensitivePathsPlugin(),
+    new ReactRefreshWebpackPlugin({
+      overlay: {
+        entry: webpackDevClientEntry,
+        // The expected exports are slightly different from what the overlay exports,
+        // so an interop is included here to enable feedback on module-level errors.
+        module: reactRefreshOverlayEntry,
+        // Since we ship a custom dev client and overlay integration,
+        // the bundled socket handling logic can be eliminated.
+        sockIntegration: false,
+      },
+    }),
     // If you require a missing module and then `npm install` it, you still have
     // to restart the development server for webpack to discover it. This plugin
     // makes the discovery automatic so you don't have to restart.
