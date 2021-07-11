@@ -1,4 +1,4 @@
-import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN} from '../types/GlobalType';
+import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN, IS_EMPTY_CART} from '../types/GlobalType';
 
 export const updateWaitLoading = (isWaiting) => ({
     type: UPDATE_PAGE_LOADING,
@@ -13,4 +13,9 @@ export const updateLocale = (locale) => ({
 export const setFilterOpen = (filterOpen) => ({
     type: SET_FILTER_OPEN,
     payload: filterOpen
+})
+
+export const setEmptyCart = (isEmpty) => ({
+    type: IS_EMPTY_CART,
+    payload: isEmpty
 })

@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import {Link} from 'react-router-dom';
 import CommonActions from '../../common/CommonActions';
 import {selectedProduct} from '../../store/actions/ProductsAction';
+import {addProduct} from '../../store/actions/CartAction';
 
 const ProductItemComponent = (props) => {
     const dispatch = useDispatch();
@@ -11,6 +12,10 @@ const ProductItemComponent = (props) => {
 
     const choseProduct = (product) => {
         dispatch(selectedProduct(product));
+    }
+
+    const addToCart = () => {
+        dispatch(addProduct(props));
     }
 
     return (
@@ -37,11 +42,6 @@ const ProductItemComponent = (props) => {
                             <span>${ props.price }</span>
                         }
                     </div>
-                </div>
-                <div className="product-add-cart">
-                    <button type="button" className="btn-add-item">
-                        <i className="icon-cart"/>
-                    </button>
                 </div>
             </div>
         </div>

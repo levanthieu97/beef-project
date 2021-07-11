@@ -1,0 +1,3 @@
+export const ADD_PRODUCT='ADD_PRODUCT';
+export const SET_COUNT='SET_COUNT';
+export const REMOVE_PRODUCT='REMOVE_PRODUCT';

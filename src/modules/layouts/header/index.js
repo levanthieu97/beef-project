@@ -1,9 +1,11 @@
 import React, {useRef ,useEffect, useState} from 'react';
+import { useSelector } from 'react-redux';
 import useOnClickOutSide from 'use-onclickoutside';
 import { useLocation , Link } from 'react-router-dom';
 
 const Header = (props) => {
     const location = useLocation();
+    const {cartItems} = useSelector(state => state.cartSlice);
     const [onTop, setOnTop] = useState(location.pathname === '/' ? true : false);
     const [searchOpen, setSearchOpen] = useState(false);
     // apply to mobile
@@ -61,9 +63,12 @@ const Header = (props) => {
                         </form>
                         <i onClick={() => setSearchOpen(!searchOpen)} className='icon-search'/>
                     </button>
-                    <Link to="#">
+                    <Link to="/cart">
                         <button className='btn-cart'>
                             <i className='icon-cart'/>
+                            {cartItems.length > 0 && <span className="btn-cart__count">
+                                {cartItems.length}
+                            </span>}
                         </button>
                     </Link>
                     <Link to='#'>

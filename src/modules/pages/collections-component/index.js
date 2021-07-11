@@ -12,10 +12,17 @@ const CollectionsComponent = (props) => {
         return  <Component key={index}/>
     })
 
+    const breadcrumbList = [
+        {
+            link: '/collections',
+            title: 'collections'
+        }
+    ];
+
     return (
         <React.Fragment>
             <HotNewsComponent />
-            <Breadcrumb />
+            <Breadcrumb breadcrumbList={breadcrumbList}/>
             
             <section className="products-page">
                 <div className="component-container">

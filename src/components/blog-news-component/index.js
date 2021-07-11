@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {v4 as uuid, v4} from 'uuid';
+import {v4 as uuid} from 'uuid';
 
 const BlogNewsComponent = (props) => {
     const newsList = [
@@ -30,7 +30,7 @@ const BlogNewsComponent = (props) => {
 
     const renderNewsList = (newsList) => {
         return newsList.map(news => (
-            <div className="col-lg-4 col-md-6 col-sm-12 news-blog" key={v4()}>
+            <div className="col-lg-4 col-md-6 col-sm-12 news-blog" key={uuid()}>
                 <div className="news-block-one">
                     <div className="inner-box">
                         <figure className="image-box">

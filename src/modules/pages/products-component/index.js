@@ -13,15 +13,25 @@ import {
 } from '../../../components';
 
 const ProductsComponent = (props) => {
-    console.log(props);
-    const {selectedProduct} = useSelector(state => state.productsSlice);
     
+    const {selectedProduct} = useSelector(state => state.productsSlice);
+    console.log(selectedProduct);
     const [state, setState] = useReducer(
         (state, newState) => ({...state, ...newState}),
         {
             choseProduct: {},
         }
     )
+    const breadcrumbList = [
+        {
+            link: '/collections',
+            title: 'beef'
+        },
+        {
+            link: '',
+            title: selectedProduct.name
+        }
+    ];
     const listImageProducts = [
         selectedProduct.primaryImage,
         selectedProduct.hoverImage,
@@ -44,7 +54,7 @@ const ProductsComponent = (props) => {
     return (
         <React.Fragment>
             <HotNewsComponent />
-            <Breadcrumb />
+            <Breadcrumb breadcrumbList={breadcrumbList}/>
 
             <section className="product-single">
                 <div className="component-container">

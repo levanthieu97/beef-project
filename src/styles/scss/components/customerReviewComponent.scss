@@ -1,34 +1,149 @@
 @use '../partials/breakpoints.scss' as *;
 
 @mixin customerReviewComponent {
-    .customer-review__container {
-        clear: both;
-        padding: 20px 0;
+  .customer-review__container {
+    clear: both;
+    padding: 20px 0;
+  }
+  .customer-review__wrapper {
+    .title-review {
+      text-align: center;
+      text-transform: uppercase;
+      font-family: var(--font-content);
     }
-    .customer-review__wrapper {
-        .title-review {
-            text-align: center;
-            text-transform: uppercase;
+    .heading {
+      margin: 0 0 10px;
+      font-weight: 400;
+      font-size: 22px;
+      @include breakpoint(phone) {
+        font-size: 26px;
+      }
+    }
+    .subheading {
+      font-weight: 700;
+      font-size: 26px;
+      @include breakpoint(phone) {
+        font-size: 30px;
+      }
+    }
+    .review-main {
+      display: block;
+      width: 100%;
+      .main-widget {
+        margin: 10px 0 20px;
+      }
+      .product-rating {
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        .rating-star {
+          display: inline-block;
+        }
+        .rating-label {
+          font-family: var(--font-content);
+          position: absolute;
+          font-weight: 400;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-left: 10px;
+        }
+      }
+      .box-review {
+        .reviews-list {
+          margin-bottom: 20px;
+        }
+        .review-item {
+          display: flex;
+          padding: 20px;
+          @include breakpointMax(phone) {
+            padding: 20px 0;
+          }
+          .review__avatar {
+            width: 40px;
+            margin-right: 27px;
+            flex-shrink: 0;
+            background-color: gray;
+            border-radius: 100%;
+            height: 40px;
+            img {
+              border-radius: 100%;
+              object-fit: cover;
+              height: 100%;
+              width: 100%;
+            }
+          }
+          .review__content {
+            flex: 1;
+            .heading-element {
+                position: relative;
+                font-family: var(--font-content);
+                .info-buyer {
+                    display: inline-block;
+                    h3 {
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin: 0 5px 5px 0;
+                        display: inline-block;
+                    }
+                    span {
+                        color: #86c440;
+                        padding-left: 10px;
+                        font-weight: 400;
+                    }
+                }
+                .date {
+                    float: right;
+                    color: #86c440;
+                    font-weight: 500;
+                }
+            }
+            .review__comment {
+              color: #000;
+              line-height: 155%;
+            }
+            .react-rater {
+              margin-bottom: 5px;
+              .react-rater-star {
+                margin-right: 4px;
+                font-size: 21px;
+                line-height: 100%;
+                &.is-active {
+                  color: var(--color-orange);
+                }
+              }
+            }
+            .react-stars {
+              span {
+                @include breakpointMax(phone) {
+                  font-size: 20px !important;
+                }
+              }
+            }
+          }
+        }
+        .products-content__list-pages {
+          margin-bottom: 25px;
+        }
+        .write-btn-review-container {
+          text-align: center;
+          .btn-review {
             font-family: var(--font-content);
-        }
-        .heading {
-            margin: 0 0 10px;
-            font-weight: 400;
-            font-size: 22px;
-            @include breakpoint(phone) {
-                font-size: 26px;
+            border: 1px solid #3eb54a;
+            text-transform: uppercase;
+            line-height: 35px;
+            background-color: transparent;
+            padding: 0 20px;
+            border-radius: 3px;
+            color: #3eb54a;
+            transition: background-color 1s ease ;
+            &:hover {
+                border-color: #3eb54a;
+                background-color: #3eb54a;
+                color: #fff;
             }
+          }
         }
-        .subheading {
-            font-weight: 700;
-            font-size: 26px;
-            @include breakpoint(phone) {
-                font-size: 30px;
-            }
-        }
-        .review-main {
-            display: block;
-            width: 100%;
-        }
+      }
     }
+  }
 }

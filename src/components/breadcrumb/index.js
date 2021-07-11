@@ -1,5 +1,7 @@
 import React from 'react';
+import { CardColumns } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import {v4 as uuid} from 'uuid';
 
 
 const Breadcrumb = (props) => {
@@ -9,7 +11,11 @@ const Breadcrumb = (props) => {
             <div className="component-container">
                 <ul className="breadcrumb-list">
                     <li><Link to="/#"><i className="icon-home"></i></Link></li>
-                    <li>All Products</li>
+                    {props.breadcrumbList && props.breadcrumbList.map(breadcrumb => (
+                        <li key={uuid()}>
+                            {breadcrumb.link ? <Link to={breadcrumb.link}>{breadcrumb.title}</Link> : breadcrumb.title}
+                        </li>
+                    ))}
                 </ul>
             </div>
         </section>
