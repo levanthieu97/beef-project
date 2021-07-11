@@ -36,12 +36,18 @@ export default class CommonActions {
     static lazyWithPreload(pathComponent) {
         const component = React.lazy(pathComponent);
         component.preload = pathComponent;
-        console.log(component);
         return component;
     }
     
     static replaceProductName(productName) {
         return _.kebabCase(productName);
+    }
+
+    static getObjectByValue(arrData, property, value) {
+        const foundObject = _.find(arrData, function(data) {
+            return data[property] === value;
+        })
+        return foundObject;
     }
 }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../../../assets/icons/logo";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 import {

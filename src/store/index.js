@@ -16,8 +16,8 @@ const makeStore = () => {
     const {persistStore, persistReducer } = require('redux-persist');
     const storage = require('redux-persist/lib/storage').default;
     const persistConfig = {
-        key: 'shoppingcart',
-        whitelist: 'cart',
+        key: 'cart',
+        whitelist: 'cartSlice',
         storage,
     };
 
@@ -29,7 +29,6 @@ const makeStore = () => {
     );
 
     store.__persistor = persistStore(store);
-    console.log(store);
     return store;
 }
 

@@ -1,4 +1,4 @@
-import React, {useState, useRef}  from 'react';
+import React, {useState, useRef, useEffect}  from 'react';
 import Swiper from 'react-id-swiper';
 import {BsCaretUp, BsCaretDown} from 'react-icons/bs';
 
@@ -23,6 +23,10 @@ const GalleryComponent = (props) => {
             }
         }
     }
+
+    useEffect(() => {
+        setMainImage(props.images[0]);
+    },[props.images])
 
     const goUp = () => {
         if(swiperRef.current) {

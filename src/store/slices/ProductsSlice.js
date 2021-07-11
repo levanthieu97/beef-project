@@ -5,7 +5,7 @@ const initialState = {
     selectedProduct: {}
 }
 
-export default (state = initialState, action) => {
+const ProductsSlice = (state = initialState, action) => {
     switch (action.type) {
         case SELECTED_PRODUCT: 
             return {
@@ -19,3 +19,5 @@ export default (state = initialState, action) => {
             return state;
     }
 }
+
+export default ProductsSlice;

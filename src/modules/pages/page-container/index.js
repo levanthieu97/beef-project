@@ -1,13 +1,24 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Helmet, HelmetProvider  } from 'react-helmet-async';
 import CommonActions from '../../../common/CommonActions';
+import {setEmptyCart} from '../../../store/actions/GlobalAction';
 const Header = CommonActions.lazyWithPreload(() => import ("../../layouts/header"));
 const Footer = CommonActions.lazyWithPreload(() => import ("../../layouts/footer"));
 const PageContainer = (props) => {
- 
+    const dispatch = useDispatch()
+    const {cartItems} = useSelector(state => state.cartSlice);
+    const {isEmptyCart} = useSelector(state => state.globalSlice);
+    useEffect(() => {
+        if(cartItems.length === 0 && props.match.params[0] === "checkout") {
+            props.history.push("/")
+        } else if( cartItems.length > 0 && isEmptyCart) {
+            dispatch(setEmptyCart(false));
+        } else if( cartItems.length === 0 && !isEmptyCart) {
+            dispatch(setEmptyCart(true));
+        }
+    }, [])
     const pageTitle = props.title;
-    console.log(props);
-
     const BodyComponent = props.container;
     
     return (

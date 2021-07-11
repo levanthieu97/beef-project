@@ -13,7 +13,7 @@ export const DEFAULT_ROUTES = [
       container: CommonActions.lazyWithPreload(() => import('../modules/pages/home-component'))
     },
     {
-      path: "/cart",
+      path: "/(cart|checkout)",
       meta: {
         title: 'NOW DELI | Fresh - Fast - Free ship'
       },

@@ -58,7 +58,6 @@ const PaginationProductsComponent = (props) => {
 
     const renderPage = () => {
         const pageNumber = fetchPageNumber();
-        console.log(pageNumber);
         return(
             <nav aria-label="Countries Pagination">
                 <ul className="pagination-list">

@@ -1,13 +1,14 @@
 import _ from 'lodash';
-import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN} from '../types/GlobalType';
+import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN, IS_EMPTY_CART} from '../types/GlobalType';
 
 const initialState = {
     isWait: true,
+    isEmptyCart: true,
     locale: 'us',
     filterOpen: false
 }
 
-export default (state = initialState, action) => {
+const GlobalSlice = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_PAGE_LOADING:
             return {
@@ -21,7 +22,13 @@ export default (state = initialState, action) => {
             return {
                 ...state, filterOpen: action.payload
             }
+        case IS_EMPTY_CART:
+            return {
+                ...state, isEmptyCart: action.payload
+            }
         default:
             return state;
     }
 }
+
+export default GlobalSlice;

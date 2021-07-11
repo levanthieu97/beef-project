@@ -1,9 +1,13 @@
 import React, {useReducer} from "react";
 import {beefSize} from "../../utils/beef-size";
 import CheckboxSize from "../products-filter/checkbox-size";
+import {addProduct} from '../../store/actions/CartAction';
+import { useDispatch } from "react-redux";
+
 import _ from "lodash";
 
 const ProductDetailsInfo = (props) => {
+  const dispatch = useDispatch();
   const comboPackage = [
     {
       number: 4,
@@ -22,13 +26,17 @@ const ProductDetailsInfo = (props) => {
       count: 1,
       defaultCheck: beefSize[0].id,
       size: beefSize[0].label,
-      unit: 'lb'
+      unit: 'lb',
+      price: beefSize[0].price,
+      estWeight: beefSize[0].estWeight,
+      discount: 0
     }
   )
   const onSizeSet = (value) => {
-    setState(
-      {size: value}
-    );
+    setState({
+        size: value.size,
+        estWeight: value.estWeight
+    });
   }
 
   const decrement = () => {
@@ -36,6 +44,22 @@ const ProductDetailsInfo = (props) => {
       count: state.count > 0 ? --state.count : 0
     })
   }
+
+  console.log(props);
+  
+  const addToCart = () => {
+    dispatch(addProduct({
+      id: props.id,
+      sku: '123456',
+      name: props.name,
+      size: state.size,
+      price: state.price,
+      count: state.count,
+      discount: state.discount,
+      image: props.primaryImage
+    }))
+  }
+
   const changeQuantity = (e) => {
     const quantity = (e.target.validity.valid) && !_.isEmpty(e.target.value) ? e.target.value : state.count;
     setState(
@@ -55,6 +79,7 @@ const ProductDetailsInfo = (props) => {
           {props.discount &&
             <span className="price-discount">{props.price}</span>
           }
+          <button type="button" className="btn-heart"><i className="icon-heart"></i></button>
         </div>
       </div>
 
@@ -75,6 +100,7 @@ const ProductDetailsInfo = (props) => {
                 sale={type.sale}
                 defaultCheck={state.defaultCheck}
                 onChange={onSizeSet}
+                estWeight={type.estWeight}
               />
             ))}
           </div>
@@ -97,6 +123,7 @@ const ProductDetailsInfo = (props) => {
           <div className="tier-price-swatch-label">
             Stock Up Savings -
             <span> {state.size} </span>
+            {state.estWeight && <span className="estimate-weight">Est Weight. {state.estWeight}</span>}
           </div>
           <div className="tier-price-block">
             <ul className="prices-tier items">
@@ -118,7 +145,7 @@ const ProductDetailsInfo = (props) => {
               <input className="quantity-input" maxLength="3" type="text" pattern="[0-9]*" value={state.count} onInput={changeQuantity}></input>
               <button type="button" onClick={() => setState({count: state.count + 1})} className="quantity-button__btn"> + </button>
             </div>
-            <button type="submit" className="btn-to-cart btn-action" > Add to cart </button>
+            <button onClick={() => addToCart()} type="submit" className="btn-to-cart btn-action" > Add to cart </button>
           </div>
         </div>
       </div>

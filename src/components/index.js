@@ -30,3 +30,11 @@ export {default as ProductDetailsInfo} from './product-details-info-component';
 export {default as TabProductDetail} from './tab-product-detail';
 export {default as RelatedProductComponent} from './related-products-component';
 export {default as CustomerReviewComponent} from './customer-review-component';
+
+/*
+*  SHOPPING CART PAGE
+*/
+export {default as CheckoutStatusComponent} from './checkout-status-component';
+export {default as EmptyCartComponent} from './cart-products-component/empty-product-component';
+export {default as CartProductsComponent} from './cart-products-component';
+export {default as CheckoutComponent} from './checkout-component';

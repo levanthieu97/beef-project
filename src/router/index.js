@@ -13,7 +13,6 @@ import {v4 as uuid} from 'uuid';
 const Routes = (props) => {
     const dispatch = useDispatch();
     const {isWait} = useSelector(state => state.globalSlice);
-
     useEffect(() => {
         initLoaded();
         window.listenEvent(EVENT.LOADED_CSS, updateProgressLoading);
