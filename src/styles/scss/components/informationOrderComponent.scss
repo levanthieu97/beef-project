@@ -1,0 +1,78 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin informationOrderComponent {
+    .checkout-info__container {
+        margin: 20px 0 10px 0;
+        .information-contact-wrap {
+            .section-title, .section-footer {
+                display: block;
+                width: 100%;
+                font-family: var(--font-content);
+                .title-info {
+                    display: inline;
+                    font-size: 22px;
+                    font-weight: 400;
+                }
+                .login-account {
+                    display: inline;
+                    float: right;
+                    font-weight: 300;
+                    line-height: 26px;
+                    @include breakpointMax(phone) {
+                        display: block;
+                        float: none;
+                    }
+                    .btn-login-info {
+                        cursor: pointer;
+                        font-weight: 400;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .section-content {
+                margin: 20px 0;
+                @include breakpointMax(phone) {
+                    margin-top: 10px;
+                }
+                .form-address-container {
+                    .form-input-field {
+                        margin-bottom: 20px;
+                        .field__label {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .section-footer {
+                min-height: 40px;
+                .return-cart {
+                    display: inline;
+                    font-weight: 300;
+                    cursor: pointer;
+                    color: #888;
+                    position: relative;
+                    top: 10px;
+                    &:hover {
+                        color: #000;
+                        text-decoration: underline;
+                    }
+                }
+                .continue-shipping {
+                    display: inline;
+                    float: right;
+                    position: relative;
+                    .btn-shipping {
+                        padding: 10px 15px;
+                        background: #888;
+                        color: white;
+                        font-size: 14px;
+                        border-radius: 5px;
+                        font-family: var(--font-content);
+                    }
+                }
+            }
+        }
+    }
+}

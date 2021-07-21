@@ -8,7 +8,7 @@ import {
 } from "./AccordionContext";
 
 const Accordion = ({
-    defaultActive = "shipping",
+    defaultActive = "information",
     children,
     collapsible = false,
     ...props
@@ -48,9 +48,6 @@ export const AccordionToggle = ({children, ...props}) => {
     const {id} = useAccordionItem();
 
     return (
-        // <button type="button" className="btn-panel-header" onClick={() => handlePanelClick(id)} {...props}>
-        //     {children}
-        // </button>
         <div className="toggle-header" {...props}>{children}</div>
     )
 }
@@ -58,7 +55,6 @@ export const AccordionToggle = ({children, ...props}) => {
 export const AccordionPanel = ({children, ...props}) => {
     const {activePanel} = useAccordion();
     const {id} = useAccordionItem();
-    console.log(activePanel);
     return activePanel === id && (
         <div className="panel-content" {...props}>
             {children}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { CardColumns } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {v4 as uuid} from 'uuid';
 

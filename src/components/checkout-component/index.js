@@ -2,6 +2,8 @@ import React from "react";
 import SummaryCartComponent from "./summary-cart-component";
 import Accordion, {AccordionPanel, AccordionToggle, AccordionItem} from "./checkout-accordion-component";
 import GiftInfoComponent from "./gift-info-component";
+import InformationOrderComponent from "./information-order-component";
+import ShippingComponent from "./shipping-component";
 
 const CheckoutComponent = (props) => {
     return (
@@ -9,14 +11,21 @@ const CheckoutComponent = (props) => {
             <div className="checkout-content row">
                 <div className="checkout-products col-md-8 col-sm-12">
                     <Accordion collapsible>
-                        <AccordionItem id="shipping">
-                            <AccordionToggle>1. Shipping</AccordionToggle>
+                        <AccordionItem id="information">
+                            <AccordionToggle>1. Information</AccordionToggle>
                             <AccordionPanel>
                                 <GiftInfoComponent/>
+                                <InformationOrderComponent />
+                            </AccordionPanel>
+                        </AccordionItem>
+                        <AccordionItem id="shipping">
+                            <AccordionToggle>2. Shipping</AccordionToggle>
+                            <AccordionPanel>
+                                <ShippingComponent/>
                             </AccordionPanel>
                         </AccordionItem>
                         <AccordionItem id="payment">
-                            <AccordionToggle>2. Payment</AccordionToggle>
+                            <AccordionToggle>3. Payment</AccordionToggle>
                             <AccordionPanel>
                                 aa
                             </AccordionPanel>

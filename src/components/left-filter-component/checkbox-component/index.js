@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CheckBox = (props) => {
-    console.log(props.value)
     const checkedValue = (e) => {
         props.onChange(e.target.value);
     }

@@ -18,3 +18,9 @@ export function useAccordionItem() {
   }
   return context;
 }
+
+export const CONTEXT_ID = {
+  INFORMATION: "information",
+  SHIPPING: "shipping",
+  PAYMENT: "payment"
+}

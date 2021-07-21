@@ -1,7 +1,6 @@
 import React from "react";
 
 const ProductItemComponent = (props) => {
-    console.log(props);
     return (
         <div className="info-product product">
             <div className="product-item-photo">
