@@ -165,7 +165,9 @@ body {
   --color-gray: #706c61;
   --color-red: #FF0000;
   --color-global: #3eb54a;
-  --color-global-light: #86c440; }
+  --color-global-light: #86c440;
+  --text-color-light: #ccc;
+  --border-color: #eee; }
 
 @keyframes skeleton {
   0% {
@@ -541,6 +543,9 @@ table > caption {
       .info-product .product-item-info .product-item-size p {
         font-size: 14px; }
 
+@use '../partials/breakpoints.scss' as *;
+@use '../partials/breakpoints.scss' as *;
+@use '../partials/breakpoints.scss' as *;
 @use '../partials/breakpoints.scss' as *;
 @use '../partials/breakpoints.scss' as *;
 @use '../partials/breakpoints.scss' as *;
@@ -1097,6 +1102,138 @@ a:hover, a:focus {
           font-size: 16px; } }
       .site-footer .site-footer__bottom .component-container p {
         color: #bbbbbc; }
+
+.field {
+  --fieldBorderColor: #a6a6a6;
+  --fieldBorderColorActive: #888; }
+
+.field__input {
+  --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  font-size: inherit; }
+
+.field__input:focus::-webkit-input-placeholder {
+  color: var(--uiFieldPlaceholderColor); }
+
+.field__input:focus::-moz-placeholder {
+  color: var(--uiFieldPlaceholderColor); }
+
+.field {
+  --uiFieldBorderWidth: var(--fieldBorderWidth, 1px);
+  --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+  --uiFieldBorderColorActive: var(--fieldBorderColorActive, rgba(22, 22, 22, 1));
+  display: var(--fieldDisplay, inline-flex);
+  position: relative;
+  font-size: var(--fieldFontSize, 1rem);
+  width: 100%;
+  border-radius: 4px; }
+
+.field__input {
+  box-sizing: border-box;
+  width: var(--fieldWidth, 100%);
+  height: var(--fieldHeight, 2.7rem);
+  padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, 0.5rem) var(--uiFieldPaddingLeft);
+  border: var(--uiFieldBorderWidth) solid var(--fieldBorderColor, rgba(0, 0, 0, 0.25));
+  border-radius: 4px; }
+
+.form__area .field__input {
+  height: var(--fieldHeight, 5rem) !important;
+  resize: none; }
+
+.form__area .field__label {
+  top: calc(15% - .5em); }
+
+.field__input:focus {
+  outline: none; }
+
+.field__input::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity .2s ease-out; }
+
+.field__input::-moz-placeholder {
+  opacity: 0;
+  transition: opacity .2s ease-out; }
+
+.field__input:focus::-webkit-input-placeholder {
+  opacity: 1;
+  transition-delay: .2s; }
+
+.field__input:focus::-moz-placeholder {
+  opacity: 1;
+  transition-delay: .2s; }
+
+.field__label-wrap {
+  box-sizing: border-box;
+  pointer-events: none;
+  cursor: text;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.field__label-wrap::after {
+  content: "";
+  box-sizing: border-box;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+.field__input:focus ~ .field__label-wrap::after {
+  opacity: 1; }
+
+.field__label {
+  position: absolute;
+  left: var(--uiFieldPaddingLeft);
+  top: calc(50% - .5em);
+  line-height: 1;
+  font-size: var(--fieldHintFontSize, inherit);
+  transition: top 0.2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity 0.2s ease-out, font-size 0.2s ease-out;
+  will-change: bottom, opacity, font-size; }
+
+.field__input:focus ~ .field__label-wrap .field__label,
+.field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label {
+  --fieldHintFontSize: var(--fieldHintFontSizeFocused, .75rem);
+  top: var(--fieldHintTopHover, 0.25rem);
+  font-size: 12px !important; }
+
+.form__group .field__label-wrap::after {
+  border: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
+  will-change: opacity, height;
+  transition: height .2s ease-out, opacity .2s ease-out;
+  border-radius: 4px; }
+
+.form__group .field__input:focus ~ .field__label-wrap::after {
+  height: 100%; }
+
+.field__select {
+  font-family: var(--font-content);
+  position: relative;
+  padding: var(--fieldPaddingTop, 0.7rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, 0rem) var(--uiFieldPaddingLeft); }
+
+.option-select::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  right: 25px;
+  margin-top: -3px;
+  border-bottom: 2px solid #888;
+  border-right: 2px solid #888;
+  transform: rotate(45deg) translateY(-50%);
+  transition: all .4s ease-in-out;
+  transform-origin: 50% 0; }
 
 .page-intro {
   position: relative; }
@@ -3176,17 +3313,236 @@ a:hover, a:focus {
   font-weight: 500; }
 
 .checkout-products .cart-gift-item .checkbox-label {
-  margin-top: 10px; }
+  margin-top: 10px;
+  display: inline-block; }
+  .checkout-products .cart-gift-item .checkbox-label input {
+    height: 0;
+    width: 0;
+    margin: 0; }
   .checkout-products .cart-gift-item .checkbox-label .checkbox__check {
     width: 18px;
     height: 18px;
-    right: 5px;
-    margin-right: 5px;
+    left: 2px;
+    margin-right: 10px;
     border-color: #000; }
     .checkout-products .cart-gift-item .checkbox-label .checkbox__check::before {
       border-color: #000;
       top: 0;
       left: 5px; }
+
+.checkout-products .cart-gift-item .gift-wrap-form {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5; }
+  .checkout-products .cart-gift-item .gift-wrap-form .form-input-field {
+    margin-bottom: 20px; }
+    .checkout-products .cart-gift-item .gift-wrap-form .form-input-field .validate-message {
+      float: right;
+      font-size: 12px;
+      color: #888;
+      margin-top: 3px;
+      font-weight: 400; }
+    .checkout-products .cart-gift-item .gift-wrap-form .form-input-field .btn-submit-gift {
+      float: right;
+      padding: 5px 15px;
+      background: #888;
+      color: white;
+      font-family: var(--font-content);
+      font-size: 14px; }
+    .checkout-products .cart-gift-item .gift-wrap-form .form-input-field .errors {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #b70020; }
+    .checkout-products .cart-gift-item .gift-wrap-form .form-input-field .field-required .field__input {
+      border-color: #b70020; }
+
+.checkout-info__container {
+  margin: 20px 0 10px 0; }
+  .checkout-info__container .information-contact-wrap .section-title, .checkout-info__container .information-contact-wrap .section-footer {
+    display: block;
+    width: 100%;
+    font-family: var(--font-content); }
+    .checkout-info__container .information-contact-wrap .section-title .title-info, .checkout-info__container .information-contact-wrap .section-footer .title-info {
+      display: inline;
+      font-size: 22px;
+      font-weight: 400; }
+    .checkout-info__container .information-contact-wrap .section-title .login-account, .checkout-info__container .information-contact-wrap .section-footer .login-account {
+      display: inline;
+      float: right;
+      font-weight: 300;
+      line-height: 26px; }
+      @media (max-width: 767px) {
+        .checkout-info__container .information-contact-wrap .section-title .login-account, .checkout-info__container .information-contact-wrap .section-footer .login-account {
+          display: block;
+          float: none; } }
+      .checkout-info__container .information-contact-wrap .section-title .login-account .btn-login-info, .checkout-info__container .information-contact-wrap .section-footer .login-account .btn-login-info {
+        cursor: pointer;
+        font-weight: 400; }
+        .checkout-info__container .information-contact-wrap .section-title .login-account .btn-login-info:hover, .checkout-info__container .information-contact-wrap .section-footer .login-account .btn-login-info:hover {
+          text-decoration: underline; }
+  .checkout-info__container .information-contact-wrap .section-content {
+    margin: 20px 0; }
+    @media (max-width: 767px) {
+      .checkout-info__container .information-contact-wrap .section-content {
+        margin-top: 10px; } }
+    .checkout-info__container .information-contact-wrap .section-content .form-address-container .form-input-field {
+      margin-bottom: 20px; }
+      .checkout-info__container .information-contact-wrap .section-content .form-address-container .form-input-field .field__label {
+        font-size: 14px; }
+  .checkout-info__container .information-contact-wrap .section-footer {
+    min-height: 40px; }
+    .checkout-info__container .information-contact-wrap .section-footer .return-cart {
+      display: inline;
+      font-weight: 300;
+      cursor: pointer;
+      color: #888;
+      position: relative;
+      top: 10px; }
+      .checkout-info__container .information-contact-wrap .section-footer .return-cart:hover {
+        color: #000;
+        text-decoration: underline; }
+    .checkout-info__container .information-contact-wrap .section-footer .continue-shipping {
+      display: inline;
+      float: right;
+      position: relative; }
+      .checkout-info__container .information-contact-wrap .section-footer .continue-shipping .btn-shipping {
+        padding: 10px 15px;
+        background: #888;
+        color: white;
+        font-size: 14px;
+        border-radius: 5px;
+        font-family: var(--font-content); }
+
+.row-calendar {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.row-middle {
+  align-items: center; }
+
+.col-calendar {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%; }
+
+.col-start {
+  justify-content: flex-start;
+  text-align: left; }
+
+.col-center {
+  justify-content: center;
+  text-align: center; }
+  .col-center .current-month {
+    font-weight: 500; }
+
+.col-end {
+  justify-content: flex-end;
+  text-align: right; }
+
+/* Calendar */
+.calendar {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: var(--neutral-color);
+  border: 1px solid var(--border-color); }
+
+.calendar .header {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 115%;
+  padding: 1.5em 0;
+  border-bottom: 1px solid var(--border-color); }
+
+.calendar .header .icon {
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.15s ease-out; }
+
+.calendar .header .icon:hover {
+  transform: scale(1.75);
+  transition: 0.25s ease-out;
+  color: var(--color-global); }
+
+.calendar .header .icon:first-of-type {
+  margin-left: 1em; }
+
+.calendar .header .icon:last-of-type {
+  margin-right: 1em; }
+
+.calendar .days {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #888;
+  font-size: 70%;
+  padding: 0.75em 0;
+  border-bottom: 1px solid var(--border-color); }
+
+.calendar .body .cell {
+  position: relative;
+  height: 5em;
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--neutral-color);
+  transition: 0.25s ease-out; }
+
+.calendar .body .cell:hover {
+  background: var(--bg-color);
+  transition: 0.5s ease-out; }
+
+.calendar .body .selected {
+  border-left: 10px solid transparent;
+  border-image: linear-gradient(45deg, #008f68 0%, #86c440 40%);
+  border-image-slice: 1; }
+
+.calendar .body .row-calendar {
+  border-bottom: 1px solid var(--border-color); }
+
+.calendar .body .row-calendar:last-child {
+  border-bottom: none; }
+
+.calendar .body .cell:last-child {
+  border-right: none; }
+
+.calendar .body .cell .number {
+  position: absolute;
+  font-size: 82.5%;
+  line-height: 1;
+  top: 0.75em;
+  right: 0.75em;
+  font-weight: 700; }
+
+.calendar .body .disabled {
+  color: var(--text-color-light);
+  pointer-events: none;
+  background-image: linear-gradient(135deg, #e5e5e5 5%, #ffffff 5%, #ffffff 50%, #e5e5e5 50%, #e5e5e5 55%, #ffffff 55%, #ffffff 100%);
+  background-size: 14.14px 14.14px; }
+
+.calendar .body .cell .bg {
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-global);
+  opacity: 0;
+  font-size: 6em;
+  position: absolute;
+  top: 0em;
+  right: 0em;
+  transition: 0.25s ease-out;
+  letter-spacing: -0.07em; }
+
+.calendar .body .cell:hover .bg,
+.calendar .body .selected .bg {
+  opacity: 0.1;
+  transition: 0.5s ease-in; }
+
+.calendar .body .col-calendar {
+  flex-grow: 0;
+  flex-basis: calc(100% / 7);
+  width: calc(100% / 7); }
 
 .search-form-wrapper {
   position: relative;

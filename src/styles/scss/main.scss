@@ -336,6 +336,7 @@ a {
 
 @include headerComponent;
 @include footerComponent;
+@include inputComponent;
 @include sliderTopComponent;
 @include productSwiperComponent;
 @include bannerTypeComponent;
@@ -353,6 +354,8 @@ a {
 @include checkoutStatusComponent;
 @include cartComponent;
 @include checkoutComponent;
+@include informationOrderComponent;
+@include calendarComponent;
 
 .search-form-wrapper {
   position: relative;

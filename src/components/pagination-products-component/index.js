@@ -16,7 +16,6 @@ const PaginationProductsComponent = (props) => {
 
     const fetchPageNumber = () => {
         const totalNumber = (pageNeighbors * 2) + 3;
-        console.log(totalNumber)
         const totalBlocks = totalNumber + 2;
 
         if(totalPages > totalBlocks) {

@@ -31,7 +31,6 @@ const MarqueeComponent = (props) => {
     const messages = _.isEmpty(props.messages)
     ? ["Welcome"]
     : _.map(props.messages, (ann, index) => {
-      console.log(ann);
         return (
             <span
             key={index}

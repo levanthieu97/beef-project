@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN, IS_EMPTY_CART} from '../types/GlobalType';
 
 const initialState = {

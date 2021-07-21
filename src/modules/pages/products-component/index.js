@@ -15,7 +15,6 @@ import {
 const ProductsComponent = (props) => {
     
     const {selectedProduct} = useSelector(state => state.productsSlice);
-    console.log(selectedProduct);
     const [state, setState] = useReducer(
         (state, newState) => ({...state, ...newState}),
         {

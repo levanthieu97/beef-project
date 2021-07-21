@@ -28,7 +28,7 @@ const Header = (props) => {
         return () => {
             isOnTopHeader();
         }
-    },[location]);
+    },[location.pathname]);
 
     const closeMenu = () => {
         setMenuOpen(false);

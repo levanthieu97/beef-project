@@ -44,8 +44,6 @@ const ProductDetailsInfo = (props) => {
       count: state.count > 0 ? --state.count : 0
     })
   }
-
-  console.log(props);
   
   const addToCart = () => {
     dispatch(addProduct({
