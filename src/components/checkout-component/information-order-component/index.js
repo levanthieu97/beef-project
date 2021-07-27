@@ -53,7 +53,7 @@ const InformationOrderComponent = (props) => {
                                         name={fieldInput.type}
                                         rules={{
                                             require: fieldInput.invalid,
-                                            validate: value => (!fieldInput.invalid && _.isEmpty(value))
+                                            validate: value => !_.isEmpty(value) || (!fieldInput.invalid && _.isEmpty(value))
                                         }}
                                         render={({field: {value, onChange}, fieldState}) => (
                                             <InputComponent 

@@ -6,7 +6,7 @@ import ProductItemComponent from "../product-item-component";
 
 const SummaryCartComponent = (props) => {
     const history = useHistory();
-    const [showCart, setShowCart] = useState(false);
+    const [showCart, setShowCart] = useState(true);
     const {cartItems} = useSelector(state => state.cartSlice);
     const redirectCart = () => {
         history.push('cart')
@@ -14,7 +14,7 @@ const SummaryCartComponent = (props) => {
     const showCartMB = (value) => {
         setShowCart(!value);
     }
-    
+
     return (
         <section className="summary-cart-container">
             <div className="container-wrapper">
