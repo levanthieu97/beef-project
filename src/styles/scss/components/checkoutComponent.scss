@@ -18,6 +18,21 @@
                     cursor: pointer;
                     font-size: 14px;
                     text-decoration: underline;
+                    @include breakpointMax(phone) {
+                        display: none;
+                    }
+                }
+                .show-cart {
+                    display: none;
+                    @include breakpointMax(phone) {
+                        display: unset;
+                        float: right;
+                        cursor: pointer;
+                        font-size: 20px;
+                        visibility: visible;
+                        position: relative;
+                        bottom: 4px;
+                    }
                 }
             }
             .summary-section-content {
@@ -148,6 +163,36 @@
                         .field__input {
                             border-color: #b70020;
                         }
+                    }
+                }
+            }
+            .gift-info-wrapper {
+                padding: 10px 20px;
+                position: relative;
+                font-size: 14px;
+                border: 1px solid #888;
+                border-radius: 5px;
+                @include breakpointMax(phone) {
+                    padding: 5px 10px;
+                }
+                .gift-info {
+                    font-size: 500;
+                    margin-bottom: 5px;
+                }
+                .change-info {
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                    cursor: pointer;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 20px;
+                    @include breakpointMax(phone) {
+                        top: 5px;
+                        right: 10px;
+                    }
+                    &:hover {
+                        color: #000
                     }
                 }
             }

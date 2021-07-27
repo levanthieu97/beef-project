@@ -38,14 +38,10 @@
         }
         .site-logo {
             display: block;
-            font-size: 14px;
-            align-items: center;
-            background: -webkit-linear-gradient(#86c440, #3eb54a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            @include breakpoint(phone) {
-                font-size: 22px;
-            }
+            width: 100px;
+            @include breakpointMax(phone) {
+              width: 75px;
+          }
         }
         .dropdown-toggle::after {
           color: #FFF;

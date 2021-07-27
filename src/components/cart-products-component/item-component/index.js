@@ -50,7 +50,8 @@ const ItemComponent = (props) => {
     const removeFromCart = () => {
         dispatch(removeProduct({
             id: props.id,
-            size: props.size
+            size: props.size,
+            count: countCurrent
         }))
     }
 

@@ -8,6 +8,7 @@ const InputComponent = (props) => {
                 type={props.type} 
                 name={props.name} 
                 onChange={props.onChange}
+                value={props.value}
             />
             <span className="field__label-wrap">
                 <span className="field__label">{props.label}</span>

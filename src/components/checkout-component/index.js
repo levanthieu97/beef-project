@@ -9,7 +9,7 @@ const CheckoutComponent = (props) => {
     return (
         <div className="checkout-container">
             <div className="checkout-content row">
-                <div className="checkout-products col-md-8 col-sm-12">
+                <div className="checkout-products col-md-8 col-sm-12 order-2 order-md-1">
                     <Accordion collapsible>
                         <AccordionItem id="information">
                             <AccordionToggle>1. Information</AccordionToggle>
@@ -32,7 +32,7 @@ const CheckoutComponent = (props) => {
                         </AccordionItem>
                     </Accordion>
                 </div>
-                <div className="summary-orders col-md-4 col-sm-12">
+                <div className="summary-orders col-md-4 col-sm-12 order-1 order-md-2">
                     <SummaryCartComponent/>
                 </div>
             </div>

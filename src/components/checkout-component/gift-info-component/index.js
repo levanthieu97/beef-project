@@ -1,28 +1,30 @@
 import React, {useState, useReducer, useRef} from "react";
 import { MdCardGiftcard } from "react-icons/md";
 import { useForm, Controller } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 import CheckBox from '../../left-filter-component/checkbox-component';
 import InputComponent from '../../../modules/layouts/input';
 import TextAreaComponent from '../../../modules/layouts/textarea';
+import { updateInfoGift, isCheckGiftOrder } from "../../../store/actions/OrderAction"
+import { FaRegEdit } from "react-icons/fa";
 import _ from "lodash";
 
 const GiftInfoComponent = (props) => {
+    const dispatch = useDispatch();
     const [giftChecked, setGiftChecked] = useState(false);
+    const {giftMessage} = useSelector(state => state.orderSlice);
     const [state, setState] = useReducer(
         (state, newState) => ({...state, ...newState}),
         {
-          fromName: "",
-          toName: "",
-          message: "",
           isSubmitGift: false,  
         }
     )
 
     const {control, handleSubmit, formState: {errors}} = useForm({
         defaultValues: {
-            fromName: "",
-            toName: "",
-            message: "",
+            fromName: giftMessage.fromName,
+            toName: giftMessage.toName,
+            message: giftMessage.message
         },
     });
 
@@ -31,12 +33,26 @@ const GiftInfoComponent = (props) => {
     }
 
     const saveGiftInfo = (data) => {
-        console.log(data);
+        setState({isSubmitGift: true})
+        dispatch(isCheckGiftOrder(giftChecked));
+        dispatch(updateInfoGift(data));
+    }
+
+    const renderInfoGift = () => {
+        return giftChecked && state.isSubmitGift && (
+            <div className="gift-info-wrapper">
+                <div className="gift-content">
+                    <p className="gift-info">From: <span>{giftMessage.fromName}</span></p>
+                    <p className="gift-info">To: <span>{giftMessage.toName}</span></p>
+                    <p className="gift-info">Message: <span>{giftMessage.message}</span></p>
+                    <span className="change-info" onClick={() => setState({isSubmitGift: false})}><FaRegEdit/></span>
+                </div>
+            </div>
+        )
     }
 
     const renderGiftForm = () => {
-
-        return giftChecked && (
+        return giftChecked && !state.isSubmitGift && (
             <div className="gift-wrap-form">
                 <form onSubmit={handleSubmit(saveGiftInfo)}>
                     <div className="form-container row">
@@ -59,7 +75,7 @@ const GiftInfoComponent = (props) => {
                                     />
                                 )}
                             />
-                            {errors.fromName && <p className="errors">Please enter your form name</p>}
+                            {errors.fromName && <p className="errors">Please enter your from name</p>}
                         </div>
                         <div className="form-input-field col-md-6 col-sm-6">
                             <Controller
@@ -69,13 +85,13 @@ const GiftInfoComponent = (props) => {
                                     require: true,
                                     validate: value => !_.isEmpty(value)
                                 }}
-                                render={({field: {value, onChange}, fieldState}) => (
+                                render={({field, fieldState}) => (
                                     <InputComponent 
                                         namePlaceHolder="To Name"
                                         name="to"
                                         label="To"
-                                        value={value}
-                                        onChange={onChange}
+                                        value={field.value}
+                                        onChange={field.onChange}
                                         invalid={fieldState.invalid}
                                     />
                                 )}
@@ -125,6 +141,7 @@ const GiftInfoComponent = (props) => {
                     />
                 </div>
                 {renderGiftForm()}
+                {renderInfoGift()}
             </div>
         </div>
         
