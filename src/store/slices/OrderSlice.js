@@ -1,4 +1,4 @@
-import {CHECK_GIFT_ORDER, UPDATE_INFO_GIFT, UPDATE_SHIPPING_ADDRESS} from '../types/OrderType';
+import {CHECK_GIFT_ORDER, UPDATE_INFO_GIFT, UPDATE_SHIPPING_ADDRESS, UPDATE_SHIPPING_COST} from '../types/OrderType';
 
 const initialState = {
     isGiftOrder: false,
@@ -19,7 +19,8 @@ const initialState = {
         country: "",
         state: "",
         zipCode: "",
-    }
+    },
+    shippingCost: "",
 }
 
 const OrderSlice = (state = initialState, action) => {
@@ -35,6 +36,10 @@ const OrderSlice = (state = initialState, action) => {
         case UPDATE_SHIPPING_ADDRESS: 
             return {
                 ...state, infoShippingAddress : action.payload
+            }
+        case UPDATE_SHIPPING_COST:
+            return {
+                ...state, shippingCost: action.payload
             }
         default:
             return state;

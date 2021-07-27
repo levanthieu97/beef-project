@@ -1,0 +1,79 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin shippingComponent {
+    .shipping-content-container {
+        .confirm-info-order {
+            padding: 10px 20px;
+            margin: 10px 20px 20px 20px;
+            border: 1px solid #777;
+            border-radius: 5px;
+            @include breakpointMax(phone) {
+                margin: 10px 0;
+            }
+            .review-block {
+                display: flex;
+                font-size: 14px;
+                margin-bottom: 10px;
+                .review-block-inner {
+                    display: flex;
+                    flex: 1;
+                    @include breakpointMax(phone) {
+                        display: block;
+                    } 
+                    .review-block__label {
+                        flex: 0 1 5em;
+                        color: #888;
+                        @include breakpointMax(phone) {
+                            margin-bottom: 5px;
+                        }
+                    }
+                    .review-block__content {
+                        color: #000;
+                        flex: 5;
+                    }
+                }
+                .review-block-link {
+                    color: #888;
+                    cursor: pointer;
+                    font-size: 13px;
+                    font-weight: 300;
+                }
+                &:not(:first-child) {
+                    padding-top: 10px;
+                    border-top: 1px solid #e5e5e5;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .calendar-instructions__wrapper {
+            .calendar-instructions {
+                margin-bottom: 10px;
+                font-family: var(--font-content);
+            }
+            .attention-wrapper {
+                margin: 10px 0;
+                font-size: 14px;
+                .attention-label {
+                    color: #b70020;
+                    text-transform: uppercase;
+                }
+                .attention-content {
+                    margin-top: 5px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    .attention-highlight {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .section-footer {
+            margin-top: 30px;
+            display: block;
+            width: 100%;
+            font-family: var(--font-content);
+        }
+    }
+}

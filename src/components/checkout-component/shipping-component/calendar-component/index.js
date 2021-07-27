@@ -1,5 +1,5 @@
 import React, {useReducer} from "react"; 
-import {format, addMonths, subMonths, startOfWeek, endOfWeek, addDays, startOfMonth, endOfMonth, isSameMonth, isSameDay, parse} from "date-fns";
+import {format, addMonths, subMonths, startOfWeek, endOfWeek, addDays, startOfMonth, endOfMonth, isSameMonth, isSameDay} from "date-fns";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const CalendarComponent = (props) => {
@@ -98,6 +98,9 @@ const CalendarComponent = (props) => {
               >
                 <span className="number">{formattedDate}</span>
                 <span className="bg">{formattedDate}</span>
+                {isSameDay(day, selectedDate) && (
+                  <span className="shipping-cost">$10</span>
+                )}
               </div>
             );
             day = addDays(day, 1);

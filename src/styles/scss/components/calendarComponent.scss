@@ -138,9 +138,13 @@
     line-height: 1;
     color: var(--color-global);
     opacity: 0;
-    font-size: 6em;
+    font-size: 80px;
+    @include breakpointMax(phone) {
+      font-size: 32px;
+    }
+    width: 100%;
     position: absolute;
-    top: 0em;
+    bottom: 0em;
     right: 0em;
     transition: 0.25s ease-out;
     letter-spacing: -0.07em;
@@ -150,6 +154,19 @@
   .calendar .body .selected .bg {
     opacity: 0.1;
     transition: 0.5s ease-in;
+  }
+  .calendar .body .cell .shipping-cost {
+    position: absolute;
+    font-weight: 700;
+    top: 40%;
+    left: 40%;
+    color: #b70020;
+    font-family: var(--font-content);
+    font-size: 20px;
+    @include breakpointMax(phone) {
+      font-size: 13px;
+      left: 25%;
+    }
   }
 
   .calendar .body .col-calendar {

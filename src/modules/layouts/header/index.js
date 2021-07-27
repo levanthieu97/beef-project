@@ -5,7 +5,7 @@ import { useLocation , Link } from 'react-router-dom';
 
 const Header = (props) => {
     const location = useLocation();
-    const {cartItems} = useSelector(state => state.cartSlice);
+    const {cartItems, numberProduct} = useSelector(state => state.cartSlice);
     const [onTop, setOnTop] = useState(location.pathname === '/' ? true : false);
     const [searchOpen, setSearchOpen] = useState(false);
     // apply to mobile
@@ -46,7 +46,8 @@ const Header = (props) => {
             <div className="component-container">
                 <Link to='/'>
                     {/* <span className='site-logo'><Logo/></span>  */}
-                    <h1 className='site-logo'>NOW DELI</h1>
+                    {/* <h1 className='site-logo'>NOW DELI</h1> */}
+                    <img className="site-logo" src="/beef/images/logo-main.png"/>
                 </Link>
                 <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
                     <Link to='/collections'>COLLECTIONS</Link>
@@ -66,8 +67,8 @@ const Header = (props) => {
                     <Link to="/cart">
                         <button className='btn-cart'>
                             <i className='icon-cart'/>
-                            {cartItems.length > 0 && <span className="btn-cart__count">
-                                {cartItems.length}
+                            {numberProduct > 0 && <span className="btn-cart__count">
+                                {numberProduct}
                             </span>}
                         </button>
                     </Link>

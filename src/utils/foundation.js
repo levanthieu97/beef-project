@@ -38,6 +38,7 @@ export const fieldShipping = [
     label: "First name",
     colMd: "col-md-6",
     colSm: "col-sm-6",
+    invalid: true,
   },
   {
     type: "lastName",
@@ -45,6 +46,7 @@ export const fieldShipping = [
     label: "Last name",
     colMd: "col-md-6",
     colSm: "col-sm-6",
+    invalid: true,
   },
   {
     type: "email",
@@ -52,6 +54,7 @@ export const fieldShipping = [
     label: "Email",
     colMd: "col-md-6",
     colSm: "col-sm-6",
+    invalid: true,
   },
   {
     type: "phone",
@@ -59,6 +62,7 @@ export const fieldShipping = [
     label: "Phone",
     colMd: "col-md-6",
     colSm: "col-sm-6",
+    invalid: true,
   },
   {
     type: "company",
@@ -66,6 +70,7 @@ export const fieldShipping = [
     label: "Company (optional)",
     colMd: "col-md-6",
     colSm: "col-sm-6",
+    invalid: false,
   },
   {
     type: "apartment",
@@ -73,6 +78,7 @@ export const fieldShipping = [
     label: "Apartment, suite, etc. (optional)",
     colMd: "col-md-6",
     colSm: "col-sm-6",
+    invalid: false,
   },
   {
     type: "address",
@@ -80,6 +86,7 @@ export const fieldShipping = [
     label: "Address",
     colMd: "col-md-12",
     colSm: "col-sm-12",
+    invalid: true,
   },
   {
     type: "city",
@@ -87,6 +94,7 @@ export const fieldShipping = [
     label: "City",
     colMd: "col-md-12",
     colSm: "col-sm-12",
+    invalid: true,
   },
 ];
 
