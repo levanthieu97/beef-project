@@ -20,7 +20,7 @@ const PageContainer = (props) => {
     }, [])
     const pageTitle = props.title;
     const BodyComponent = props.container;
-    
+    console.log(props);
     return (
         <HelmetProvider >
             <div className="app-main">
@@ -32,7 +32,7 @@ const PageContainer = (props) => {
                     <title>{pageTitle}</title>
                 </Helmet>
                 <Suspense fallback={null}>
-                    <Header/>
+                    <Header location={props.location}/>
                     <main className={`${props.location.pathname !== '/' ? 'main-page' : ''} ${props.classNamePage}`}>
                         <BodyComponent/>
                     </main>
