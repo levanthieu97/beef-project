@@ -36,7 +36,7 @@ const Routes = (props) => {
                     <Route key={uuid()}
                     exact={route.exact} 
                     path={route.path} 
-                    render={routeProps => <PageContainer {...routeProps} title={route.meta.title} classNamePage={route.classNamePage} container={route.container}/>}/>
+                    render={routeProps => <PageContainer {...routeProps} title={route.meta.title} classNamePage={route.pageContainer} container={route.container}/>}/>
                 ))}
             </Switch>    
         )

@@ -1,17 +1,21 @@
 import React, {useRef ,useEffect, useState} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import useOnClickOutSide from 'use-onclickoutside';
-import { useLocation , Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import {isSmallLayout} from '../../../store/actions/GlobalAction';
 
 const Header = (props) => {
-    const location = useLocation();
-    const {cartItems, numberProduct} = useSelector(state => state.cartSlice);
-    const [onTop, setOnTop] = useState(location.pathname === '/' ? true : false);
+    const {numberProduct} = useSelector(state => state.cartSlice);
+    const [onTop, setOnTop] = useState(props.location.pathname === '/' ? true : false);
     const [searchOpen, setSearchOpen] = useState(false);
     // apply to mobile
     const [menuOpen, setMenuOpen] = useState(false);
+    const dispatch = useDispatch();
     const navRef = useRef(null);
     const searchRef = useRef(null);
+    const ref = useRef({
+        innerWidth: 0,
+    })
 
     const isOnTopHeader = () => {
         if(window.pageYOffset === 0) {
@@ -22,13 +26,32 @@ const Header = (props) => {
     }
 
     useEffect(() => {
-        if(location.pathname !== '/') return;
-        isOnTopHeader();
-        window.onscroll = () => { isOnTopHeader(); };
+        if(props.location.pathname !== '/') {
+            return;
+        } 
+        window.listenEvent("scroll", isOnTopHeader);
         return () => {
-            isOnTopHeader();
+            window.stopListenEvent("scroll", isOnTopHeader);
         }
-    },[location.pathname]);
+    },[]);
+
+    useEffect(() => {
+        window.listenEvent("resize", resize);
+        return () => {
+            window.stopListenEvent("resize", resize);
+        }
+    },[])
+
+    const resize = () => {
+        if(ref.current.innerWidth !== window.innerWidth) {
+            ref.current.innerWidth = window.innerWidth;
+            if(window.innerWidth <= 767) {
+                dispatch(isSmallLayout(true));
+            } else {
+                dispatch(isSmallLayout(false))
+            }
+        }
+    }
 
     const closeMenu = () => {
         setMenuOpen(false);
@@ -45,8 +68,6 @@ const Header = (props) => {
         <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`} >
             <div className="component-container">
                 <Link to='/'>
-                    {/* <span className='site-logo'><Logo/></span>  */}
-                    {/* <h1 className='site-logo'>NOW DELI</h1> */}
                     <img className="site-logo" src="/beef/images/logo-main.png"/>
                 </Link>
                 <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>

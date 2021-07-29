@@ -1,4 +1,4 @@
-import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN, IS_EMPTY_CART} from '../types/GlobalType';
+import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN, IS_EMPTY_CART, IS_SMALL_LAYOUT} from '../types/GlobalType';
 
 export const updateWaitLoading = (isWaiting) => ({
     type: UPDATE_PAGE_LOADING,
@@ -19,3 +19,8 @@ export const setEmptyCart = (isEmpty) => ({
     type: IS_EMPTY_CART,
     payload: isEmpty
 })
+
+export const isSmallLayout = (isSmall= false) => ({
+    type: IS_SMALL_LAYOUT,
+    payload: isSmall
+}) 

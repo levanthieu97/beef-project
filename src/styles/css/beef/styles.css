@@ -892,8 +892,8 @@ a:hover, a:focus {
         background-color: #FFF; }
   .site-header .site-nav {
     top: 0;
-    right: -250px;
-    width: 250px;
+    left: -280px;
+    width: 280px;
     z-index: 9999;
     height: 100vh;
     margin-left: auto;
@@ -906,7 +906,7 @@ a:hover, a:focus {
       .site-header .site-nav {
         position: relative;
         height: auto;
-        right: 0;
+        left: 0;
         width: auto;
         border: none;
         background-color: transparent; } }
@@ -920,7 +920,7 @@ a:hover, a:focus {
         .site-header .site-nav .site-nav__btn {
           display: none; } }
     .site-header .site-nav.site-nav--open {
-      right: 0; }
+      left: 0; }
     .site-header .site-nav a {
       font-size: 15px;
       font-weight: 500;

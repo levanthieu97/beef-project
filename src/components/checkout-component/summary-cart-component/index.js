@@ -6,8 +6,9 @@ import ProductItemComponent from "../product-item-component";
 
 const SummaryCartComponent = (props) => {
     const history = useHistory();
-    const [showCart, setShowCart] = useState(true);
+    const [showCart, setShowCart] = useState(false);
     const {cartItems} = useSelector(state => state.cartSlice);
+    const { isSmallLayout } = useSelector(state =>state.globalSlice);
     const redirectCart = () => {
         history.push('cart')
     }
@@ -25,7 +26,7 @@ const SummaryCartComponent = (props) => {
                         <i className={`${showCart ? 'icon-up-open' : 'icon-down-open'}`}></i>
                     </div>
                 </header>
-                {showCart && <div className="summary-section-content">
+                { (!isSmallLayout || showCart) && <div className="summary-section-content">
                     <ol className="products-shopping-cart">
                         {cartItems.map(item => (
                             <li className="product-item" key={uuid()}>

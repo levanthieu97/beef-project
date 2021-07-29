@@ -1,10 +1,11 @@
-import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN, IS_EMPTY_CART} from '../types/GlobalType';
+import {UPDATE_PAGE_LOADING, UPDATE_LOCALE, SET_FILTER_OPEN, IS_EMPTY_CART, IS_SMALL_LAYOUT} from '../types/GlobalType';
 
 const initialState = {
     isWait: true,
     isEmptyCart: true,
     locale: 'us',
-    filterOpen: false
+    filterOpen: false,
+    isSmallLayout: window.innerWidth <= 767,
 }
 
 const GlobalSlice = (state = initialState, action) => {
@@ -24,6 +25,10 @@ const GlobalSlice = (state = initialState, action) => {
         case IS_EMPTY_CART:
             return {
                 ...state, isEmptyCart: action.payload
+            }
+        case IS_SMALL_LAYOUT:
+            return {
+                ...state, isSmallLayout: action.payload
             }
         default:
             return state;
