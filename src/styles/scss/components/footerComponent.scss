@@ -9,6 +9,9 @@
       padding: 70px 0 50px 0;
       border-bottom: 2px solid rgba(255,255,255,.1);
       margin-top: 30px;
+      @include breakpointMax(phone) {
+        margin-top: 0px;
+    }
       .site-logo {
         display: block;
         font-size: 28px;

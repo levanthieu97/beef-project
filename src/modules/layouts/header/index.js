@@ -59,7 +59,7 @@ const Header = (props) => {
 
     const closeSearch = () => {
         setSearchOpen(false);
-    }
+    }   
 
     useOnClickOutSide(navRef, closeMenu);
     useOnClickOutSide(searchRef, closeSearch);
@@ -70,12 +70,14 @@ const Header = (props) => {
                 <Link to='/'>
                     <img className="site-logo" src="/beef/images/logo-main.png"/>
                 </Link>
-                <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
-                    <Link to='/collections'>COLLECTIONS</Link>
-                    <Link to='#'>GIFT CENTER</Link>
-                    <Link to='/'>SUBSCRIPTIONS</Link>
-                    <Link to='#'>GEAR</Link>
-                    <Link to='#'>WE ARE ND</Link>
+                <nav className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
+                    <div ref={navRef} className="site-nav-wrapper">
+                        <Link to='/collections'>COLLECTIONS</Link>
+                        <Link to='#'>GIFT CENTER</Link>
+                        <Link to='/'>SUBSCRIPTIONS</Link>
+                        <Link to='#'>GEAR</Link>
+                        <Link to='#'>WE ARE ND</Link>
+                    </div>
                 </nav>
                 <div className='site-header__actions'>
                     <button ref={searchRef} className={`search-form-wrapper ${searchOpen ? 'search-form--active' : ''}`}>
@@ -93,7 +95,7 @@ const Header = (props) => {
                             </span>}
                         </button>
                     </Link>
-                    <Link to='#'>
+                    <Link to='/account/login'>
                         <button className='site-header__btn-avatar'><i className='icon-avatar'/></button>
                     </Link>
                     <button

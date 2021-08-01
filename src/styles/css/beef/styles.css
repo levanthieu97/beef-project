@@ -167,7 +167,12 @@ body {
   --color-global: #3eb54a;
   --color-global-light: #86c440;
   --text-color-light: #ccc;
-  --border-color: #ccc; }
+  --border-color: #ccc;
+  --window-height: 100vh;
+  --header-height: 100px;
+  --header-mobile-height: 60px;
+  --footer-height: 410px
+; }
 
 @keyframes skeleton {
   0% {
@@ -568,6 +573,16 @@ table > caption {
       border-radius: 5px;
       font-family: var(--font-content); }
 
+.page-content-fixScreen {
+  min-height: calc(var(--window-height) - var(--header-height) - var(--footer-height)); }
+
+.header-title {
+  text-transform: uppercase;
+  font-family: var(--font-content);
+  font-weight: 400;
+  text-align: center; }
+
+@use '../partials/breakpoints.scss' as *;
 @use '../partials/breakpoints.scss' as *;
 @use '../partials/breakpoints.scss' as *;
 @use '../partials/breakpoints.scss' as *;
@@ -859,10 +874,7 @@ a:hover, a:focus {
   .site-header .dropdown-toggle::after {
     color: #FFF; }
   .site-header .site-header__btn-avatar {
-    display: none; }
-    @media (min-width: 1024px) {
-      .site-header .site-header__btn-avatar {
-        display: block; } }
+    display: block; }
   @media (min-width: 1024px) {
     .site-header .site-header__btn-menu {
       display: none; } }
@@ -899,7 +911,6 @@ a:hover, a:focus {
     margin-left: auto;
     margin-right: auto;
     position: fixed;
-    background-color: #FFF;
     transition: all .3s ease;
     border-left: 1px solid #E5E5E5; }
     @media (min-width: 1024px) {
@@ -907,6 +918,7 @@ a:hover, a:focus {
         position: relative;
         height: auto;
         left: 0;
+        margin-left: 70px;
         width: auto;
         border: none;
         background-color: transparent; } }
@@ -920,10 +932,16 @@ a:hover, a:focus {
         .site-header .site-nav .site-nav__btn {
           display: none; } }
     .site-header .site-nav.site-nav--open {
-      left: 0; }
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.4); }
+      .site-header .site-nav.site-nav--open .site-nav-wrapper {
+        width: 280px;
+        background-color: #FFF;
+        height: 100%; }
     .site-header .site-nav a {
-      font-size: 15px;
-      font-weight: 500;
+      font-family: var(--font-content);
+      font-weight: 400;
       width: 100%;
       color: #000;
       display: block;
@@ -935,8 +953,7 @@ a:hover, a:focus {
           padding: 0;
           color: #FFF;
           margin-right: 45px;
-          display: inline-block;
-          font-size: 14px; } }
+          display: inline-block; } }
   .site-header.site-header--fixed {
     border-bottom: 1px solid #E5E5E5;
     background-color: #FFF; }
@@ -977,6 +994,9 @@ a:hover, a:focus {
     padding: 70px 0 50px 0;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     margin-top: 30px; }
+    @media (max-width: 767px) {
+      .site-footer .site-footer__top {
+        margin-top: 0px; } }
     .site-footer .site-footer__top .site-logo {
       display: block;
       font-size: 28px;
@@ -3667,6 +3687,130 @@ a:hover, a:focus {
   display: block;
   width: 100%;
   font-family: var(--font-content); }
+
+.login-page {
+  background-color: #f3f3f3; }
+  .login-page .login-form-container, .login-page .register-form-container {
+    padding: 80px 0;
+    margin: 0 200px;
+    display: grid;
+    align-items: center; }
+    @media (max-width: 767px) {
+      .login-page .login-form-container, .login-page .register-form-container {
+        margin: 0 10px; } }
+    .login-page .login-form-container .form-container, .login-page .register-form-container .form-container {
+      background-color: #fff;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 10px;
+      padding: 20px 0; }
+      .login-page .login-form-container .form-container .login-form-wrapper, .login-page .register-form-container .form-container .login-form-wrapper {
+        border-right: 1px solid #e5e5e5; }
+        @media (max-width: 767px) {
+          .login-page .login-form-container .form-container .login-form-wrapper, .login-page .register-form-container .form-container .login-form-wrapper {
+            border: none; } }
+        .login-page .login-form-container .form-container .login-form-wrapper .form-content, .login-page .register-form-container .form-container .login-form-wrapper .form-content {
+          letter-spacing: 0;
+          overflow: hidden;
+          margin: 20px 70px; }
+          @media (max-width: 767px) {
+            .login-page .login-form-container .form-container .login-form-wrapper .form-content, .login-page .register-form-container .form-container .login-form-wrapper .form-content {
+              margin: 20px; } }
+          .login-page .login-form-container .form-container .login-form-wrapper .form-content .field-content, .login-page .register-form-container .form-container .login-form-wrapper .form-content .field-content {
+            margin-bottom: 20px; }
+          .login-page .login-form-container .form-container .login-form-wrapper .form-content .label-input::after, .login-page .register-form-container .form-container .login-form-wrapper .form-content .label-input::after {
+            content: '*';
+            color: #e02b27;
+            font-size: 1rem;
+            margin-left: 5px; }
+          .login-page .login-form-container .form-container .login-form-wrapper .form-content .fieldset, .login-page .register-form-container .form-container .login-form-wrapper .form-content .fieldset {
+            margin-top: 10px; }
+            .login-page .login-form-container .form-container .login-form-wrapper .form-content .fieldset .form__input, .login-page .register-form-container .form-container .login-form-wrapper .form-content .fieldset .form__input {
+              line-height: 1.6;
+              border-radius: 3px; }
+              .login-page .login-form-container .form-container .login-form-wrapper .form-content .fieldset .form__input.validate-fail, .login-page .register-form-container .form-container .login-form-wrapper .form-content .fieldset .form__input.validate-fail {
+                border-color: #b70020; }
+            .login-page .login-form-container .form-container .login-form-wrapper .form-content .fieldset .message-errors, .login-page .register-form-container .form-container .login-form-wrapper .form-content .fieldset .message-errors {
+              text-align: left;
+              font-size: 14px;
+              font-family: var(--font-content);
+              font-weight: 400;
+              color: #b70020;
+              margin-top: 5px; }
+        .login-page .login-form-container .form-container .login-form-wrapper .action-form .forgot-password, .login-page .register-form-container .form-container .login-form-wrapper .action-form .forgot-password {
+          text-align: right; }
+          .login-page .login-form-container .form-container .login-form-wrapper .action-form .forgot-password span, .login-page .register-form-container .form-container .login-form-wrapper .action-form .forgot-password span {
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 400; }
+            .login-page .login-form-container .form-container .login-form-wrapper .action-form .forgot-password span:hover, .login-page .register-form-container .form-container .login-form-wrapper .action-form .forgot-password span:hover {
+              color: #3eb54a; }
+        .login-page .login-form-container .form-container .login-form-wrapper .action-form .btn-login, .login-page .register-form-container .form-container .login-form-wrapper .action-form .btn-login {
+          margin-top: 20px;
+          text-align: center;
+          background: linear-gradient(#86c440, #3eb54a);
+          color: #fff;
+          padding: 10px 20px;
+          width: 100%; }
+        .login-page .login-form-container .form-container .login-form-wrapper .action-form .spec, .login-page .register-form-container .form-container .login-form-wrapper .action-form .spec {
+          text-align: center;
+          margin: 20px 0; }
+          .login-page .login-form-container .form-container .login-form-wrapper .action-form .spec span, .login-page .register-form-container .form-container .login-form-wrapper .action-form .spec span {
+            position: relative;
+            padding: 0 8px; }
+            .login-page .login-form-container .form-container .login-form-wrapper .action-form .spec span::before, .login-page .register-form-container .form-container .login-form-wrapper .action-form .spec span::before {
+              content: "";
+              border-top: 1px solid #e4e4e4;
+              position: absolute;
+              bottom: 10px;
+              right: 100%;
+              width: 9999em; }
+            .login-page .login-form-container .form-container .login-form-wrapper .action-form .spec span::after, .login-page .register-form-container .form-container .login-form-wrapper .action-form .spec span::after {
+              content: "";
+              border-top: 1px solid #e4e4e4;
+              position: absolute;
+              bottom: 10px;
+              left: 100%;
+              width: 9999em; }
+        .login-page .login-form-container .form-container .login-form-wrapper .action-form .more-info, .login-page .register-form-container .form-container .login-form-wrapper .action-form .more-info {
+          text-align: center;
+          font-family: var(--font-content); }
+          .login-page .login-form-container .form-container .login-form-wrapper .action-form .more-info .action-redirect, .login-page .register-form-container .form-container .login-form-wrapper .action-form .more-info .action-redirect {
+            cursor: pointer;
+            line-height: 24px;
+            letter-spacing: 1px;
+            font-weight: 400; }
+            .login-page .login-form-container .form-container .login-form-wrapper .action-form .more-info .action-redirect i, .login-page .register-form-container .form-container .login-form-wrapper .action-form .more-info .action-redirect i {
+              margin-left: 5px;
+              transition: all 1s ease; }
+            .login-page .login-form-container .form-container .login-form-wrapper .action-form .more-info .action-redirect:hover, .login-page .register-form-container .form-container .login-form-wrapper .action-form .more-info .action-redirect:hover {
+              color: #3eb54a; }
+              .login-page .login-form-container .form-container .login-form-wrapper .action-form .more-info .action-redirect:hover i, .login-page .register-form-container .form-container .login-form-wrapper .action-form .more-info .action-redirect:hover i {
+                margin-left: 15px; }
+          .login-page .login-form-container .form-container .login-form-wrapper .action-form .more-info .label-title, .login-page .register-form-container .form-container .login-form-wrapper .action-form .more-info .label-title {
+            font-weight: 300; }
+      .login-page .login-form-container .form-container .background-login, .login-page .register-form-container .form-container .background-login {
+        padding-top: 10px; }
+        @media (max-width: 767px) {
+          .login-page .login-form-container .form-container .background-login, .login-page .register-form-container .form-container .background-login {
+            display: none; } }
+        .login-page .login-form-container .form-container .background-login .login-logo, .login-page .register-form-container .form-container .background-login .login-logo {
+          align-items: center;
+          width: 100%;
+          object-position: top center;
+          object-fit: cover;
+          border-radius: 5px; }
+        .login-page .login-form-container .form-container .background-login .message-shop, .login-page .register-form-container .form-container .background-login .message-shop {
+          line-height: 1.2;
+          text-align: center;
+          font-size: 14px; }
+  .login-page .register-form-container {
+    margin: 0 340px;
+    padding: 40px 0; }
+    @media (max-width: 767px) {
+      .login-page .register-form-container {
+        margin: 0px; } }
+    .login-page .register-form-container .login-form-wrapper {
+      border-right: none !important; }
 
 .search-form-wrapper {
   position: relative;

@@ -355,3 +355,14 @@ table > caption {
       }
   }
 }
+
+.page-content-fixScreen {
+  min-height: calc(var(--window-height) - var(--header-height) - var(--footer-height));
+}
+
+.header-title {
+  text-transform: uppercase;
+  font-family: var(--font-content);
+  font-weight: 400;
+  text-align: center;
+}

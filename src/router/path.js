@@ -22,7 +22,7 @@ export const DEFAULT_ROUTES = [
       pageContainer: 'cartPageContainer',
       container: CommonActions.lazyWithPreload(() => import('../modules/pages/cart-component'))
     },
-    {
+    { 
       path: "/collections",
       name: 'Collections',
       meta: {
@@ -40,6 +40,15 @@ export const DEFAULT_ROUTES = [
       },
       pageContainer: 'productsPageComponent',
       container: CommonActions.lazyWithPreload(() => import('../modules/pages/products-component'))
+    },
+    {
+      path: '/account/(login|register)',
+      name: 'Login',
+      meta: {
+        title: 'BEEF - NOW DELI | Fresh - Fast - Free ship',
+      },
+      pageContainer: 'loginPageContainer',
+      container: CommonActions.lazyWithPreload(() => import('../modules/pages/login-component'))
     },
     {
       pathUrl: '/403',
