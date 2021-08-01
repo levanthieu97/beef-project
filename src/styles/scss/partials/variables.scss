@@ -17,6 +17,11 @@
   
   --text-color-light: #ccc;
   --border-color: #ccc;
+
+  --window-height: 100vh;
+  --header-height: 100px;
+  --header-mobile-height: 60px;
+  --footer-height: 410px
 }
 
 @mixin inputPlaceholder() {

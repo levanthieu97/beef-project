@@ -38,3 +38,9 @@ export {default as CheckoutStatusComponent} from './checkout-status-component';
 export {default as EmptyCartComponent} from './cart-products-component/empty-product-component';
 export {default as CartProductsComponent} from './cart-products-component';
 export {default as CheckoutComponent} from './checkout-component';
+
+/*
+*  SHOPPING CART PAGE
+*/
+export {default as LoginFormComponent} from './login-form-component';
+export {default as RegisterComponent} from './register-component';

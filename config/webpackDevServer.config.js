@@ -55,6 +55,7 @@ module.exports = function (proxy, allowedHost) {
     // for some reason broken when imported through webpack. If you just want to
     // use an image, put it in `src` and `import` it from JavaScript instead.
     contentBase: paths.appPublic,
+    contentBasePublicPath: paths.publicUrlOrPath,
     // By default files from `contentBase` will not trigger a page reload.
     watchContentBase: true,
     // Enable hot reloading server. It will provide WDS_SOCKET_PATH endpoint
@@ -62,6 +63,8 @@ module.exports = function (proxy, allowedHost) {
     // updated. The WebpackDevServer client is included as an entry point
     // in the webpack development configuration. Note that only changes
     // to CSS are currently hot reloaded. JS changes will refresh the browser.
+    transportMode: 'ws',
+    injectClient: false,
     hot: true,
     sockHost,
     sockPath,

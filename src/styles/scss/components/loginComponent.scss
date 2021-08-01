@@ -1,0 +1,160 @@
+@use '../partials/breakpoints.scss' as *;
+
+@mixin loginComponent {
+    .login-page {
+        background-color: #f3f3f3;
+        .login-form-container,  .register-form-container{
+            padding: 80px 0;
+            margin: 0 200px;
+            display: grid;
+            align-items: center;
+            @include breakpointMax(phone) {
+                margin: 0 10px;
+            }
+            .form-container {
+                background-color: #fff;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                border-radius: 10px;
+                padding: 20px 0;
+                .login-form-wrapper {
+                    border-right: 1px solid #e5e5e5;
+                    @include breakpointMax(phone) {
+                        border: none;
+                    }
+                    .form-content {
+                        letter-spacing: 0;
+                        overflow: hidden;
+                        margin: 20px 70px;
+                        @include breakpointMax(phone) {
+                            margin: 20px;
+                        }
+                        .field-content {
+                            margin-bottom: 20px;
+                        }
+                        .label-input::after {
+                            content: '*';
+                            color: #e02b27;
+                            font-size: 1rem;
+                            margin-left: 5px;
+                        }
+                        .fieldset {
+                            margin-top: 10px;
+                            .form__input {
+                                line-height: 1.6;
+                                border-radius: 3px;
+                                &.validate-fail {
+                                    border-color: #b70020;
+                                }
+                            }
+                            .message-errors {
+                                text-align: left;
+                                font-size: 14px;
+                                font-family: var(--font-content);
+                                font-weight: 400;
+                                color: #b70020;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                    .action-form {
+                        .forgot-password {
+                            text-align: right;
+                            span {
+                                cursor: pointer;
+                                font-size: 13px;
+                                font-weight: 400;
+                                &:hover {
+                                    color: #3eb54a
+                                }
+                            }
+                        }
+                        .btn-login {
+                            margin-top: 20px;
+                            text-align: center;
+                            background: linear-gradient(#86c440,#3eb54a);
+                            color: #fff;
+                            padding: 10px 20px;
+                            width: 100%;
+                        }
+                        .spec {
+                            text-align: center;
+                            margin: 20px 0;
+
+                            span {
+                                position: relative;
+                                padding: 0 8px;
+                                &::before {
+                                    content: "";
+                                    border-top: 1px solid #e4e4e4;
+                                    position: absolute;
+                                    bottom: 10px;
+                                    right: 100%;
+                                    width: 9999em;
+                                }
+                                &::after {
+                                    content: "";
+                                    border-top: 1px solid #e4e4e4;
+                                    position: absolute;
+                                    bottom: 10px;
+                                    left: 100%;
+                                    width: 9999em;
+                                }
+                            }
+                        }
+                        .more-info {
+                            text-align: center;
+                            font-family: var(--font-content);
+                            .action-redirect {
+                                cursor: pointer;
+                                line-height: 24px;
+                                letter-spacing: 1px;
+                                font-weight: 400;
+                                i {
+                                    margin-left: 5px;
+                                    transition: all 1s ease;
+                                }
+                                &:hover {
+                                    color: #3eb54a;
+                                    i {
+                                        margin-left: 15px;
+                                    }
+                                }
+                            }
+                            .label-title {
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+                .background-login {
+                    padding-top: 10px   ;
+                    @include breakpointMax(phone) {
+                        display: none;
+                    }
+                    .login-logo {
+                        align-items: center;
+                        width: 100%;
+                        object-position: top center;
+                        object-fit: cover;
+                        border-radius: 5px;
+                    }
+                    .message-shop {
+                        line-height: 1.2;
+                        text-align: center;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .register-form-container {
+            margin: 0 340px;
+            padding: 40px 0;
+            @include breakpointMax(phone) {
+                margin: 0px;
+            }
+            .login-form-wrapper {
+                border-right: none !important;
+            }
+        }
+    }
+}

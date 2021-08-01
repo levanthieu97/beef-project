@@ -1,4 +1,4 @@
-import React, {useState, useReducer, useRef} from "react";
+import React, {useState, useReducer} from "react";
 import { MdCardGiftcard } from "react-icons/md";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
